@@ -29,6 +29,25 @@ namespace ApiInterface
         public Task<int> Insertcity(City1 k);
         public Task<int> Updatecity(City1 k);
 
+        public Task<Carlist> GetCars();
+        public Task<int> Deletecar(int id);
+        public Task<int> Insertcar(Car k);
+        public Task<int> Updatecar(Car k);
+
+        public Task<Carlist> Getfavorites();
+        public Task<int> Deletefavorite(int id);
+        public Task<int> Insertfavorite(Favorite k);
+        public Task<int> Updatefavorite(Favorite k);
+
+        public Task<Carlist> Getseller();
+        public Task<int> Deleteseller(int id);
+        public Task<int> Insertseller(Favorite k);
+        public Task<int> Updateseller(Favorite k);
+
+        public Task<Carlist> Getbrand();
+        public Task<int> Deletebrand(int id);
+        public Task<int> Insertbrand(Favorite k);
+        public Task<int> Updatebrand(Favorite k);
 
     }
 }

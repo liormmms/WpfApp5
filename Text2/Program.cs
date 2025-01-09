@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 //TEST GROUPTYPE
 
+using ApiInterface;
 using Model;
 using System.Diagnostics;
 using System.Net.Http.Json;
@@ -233,17 +234,17 @@ using ViewModel;
 //{
 //    Console.WriteLine(c.fname);
 //}
-//Kindservice apiservice = new();
-//Kindlist cities = await apiservice.GetAllKindes();
-//Console.WriteLine(cities.Count);
-//int id = cities.Last().Id;
-//await apiservice.DeleteAkind(id);
-//Console.WriteLine(cities.Count);
+Apiservice apiservice = new();
+Kindlist cities = await apiservice.GetKinds();
+Console.WriteLine(cities.Count);
+int id = cities.Last().Id;
+await apiservice.DeleteKinds(id);
+Console.WriteLine(cities.Count);
 
-//Kind c1 = new Kind() { kind = "rare" };
-//await apiservice.InsertAkind(c1);
-//Kind myCity = cities.First();
-//myCity.kind = "rare";
-//await apiservice.UpdateAKind(myCity);
+Kind c1 = new Kind() { kind = "rare" };
+await apiservice.InsertKinds(c1);
+Kind myCity = cities.First();
+myCity.kind = "rare";
+await apiservice.UpdateKinds(myCity);
 #endregion
 
