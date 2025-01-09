@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfApp5.mainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="mainPage">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="4*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+
+            <TextBlock>
+                <Hyperlink Click="register">
+                    register
+                </Hyperlink>
+            </TextBlock>
+            <TextBlock>
+    <Hyperlink Click="enter">
+        enter
+    </Hyperlink>
+
+            </TextBlock>
+
+        </StackPanel>
+
+        <Image Source="c:\users\user\source\repos\wpfapp5\wpfapp5\icon\1984811394.webp" Height="850" Width="2000" Grid.Row="1"/>
+
+    </Grid>
+</Page>
