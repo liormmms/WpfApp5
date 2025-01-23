@@ -248,3 +248,48 @@ myCity.kind = "rare";
 await apiservice.UpdateKinds(myCity);
 #endregion
 
+
+
+Apiservice apiservice1 = new();
+Brandlist brands = await apiservice1.Getbrand();
+Console.WriteLine(brands.Count);
+int bd = brands.Last().Id;
+await apiservice1.Deletebrand(bd);
+Console.WriteLine(brands.Count);
+
+Brand b1 = new Brand() { Bname = "fiat" };
+await apiservice1.Insertbrand(b1);
+Brand mybrand = brands.First();
+mybrand.Bname = "porch";
+await apiservice1.Updatebrand(mybrand);
+
+
+
+Apiservice apiservice2 = new();
+Carlist cars = await apiservice2.GetCars();
+Console.WriteLine(cars.Count);
+int cd = cars.Last().Id;
+await apiservice2.Deletecar(bd);
+Console.WriteLine(cars.Count);
+
+Car c2 = new Car() { Price = 4000 };
+await apiservice1.Insertcar(c2);
+Car mycar = cars.First();
+mycar.Price = 60000;
+await apiservice2.Updatecar(mycar);
+
+
+
+Apiservice apiservice3 = new();
+Citylist cities2 = await apiservice3.Getcities();
+Console.WriteLine(cities2.Count);
+int c3 = cities.Last().Id;
+await apiservice3.Deletecity(c3);
+Console.WriteLine(cities.Count);
+
+//Car c2 = new Car() { Price = 4000 };
+//await apiservice1.Insertcar(c2);
+//Car mycar = cars.First();
+//mycar.Price = 60000;
+//await apiservice2.Updatecar(mycar);
+

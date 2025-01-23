@@ -55,6 +55,24 @@ namespace ViewModel
             }
         }
 
+        protected override void CreateInsertSQL(Base entity, OleDbCommand cmd)
+        {
+            Seller model = entity as Seller;
+            if (model != null)
+            {
+                string sql = $"Insert into model(phone,sellerpass,email,city) values (@phone,@sellerpass,@email,@city)";
+                command.CommandText = sql;
+                command.Parameters.Add(new OleDbParameter("@phone", model.phone));
+                command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
+                command.Parameters.Add(new OleDbParameter("@email", model.email));
+                command.Parameters.Add(new OleDbParameter("@city", model.city));
+
+
+            }
+
+
+        }
+
 
 
     }

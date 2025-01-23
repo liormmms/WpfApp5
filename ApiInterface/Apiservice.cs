@@ -14,7 +14,7 @@ namespace ApiInterface
         HttpClient client;
 
         public Apiservice()
-        {
+        {        //http://localhost:5203/api/Kind/buyerselector
             uri = "http://localhost:5203/api/Kind/";
             client = new HttpClient();
         }
@@ -26,164 +26,170 @@ namespace ApiInterface
             this.uri = baseUri ?? throw new ArgumentNullException(nameof(baseUri));
         }
 
-        public Task<int> Deletebrand(int id)
+        public async Task<int> Deletebrand(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletebrands/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deletebuyers(int id)
+        public async Task<int> Deletebuyers(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletebuyers/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deletecar(int id)
+        public async Task<int> Deletecar(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletecars/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deletecity(int id)
+        public async Task<int> Deletecity(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletebuyers/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deletefavorite(int id)
+        public async Task<int> Deletefavorite(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletefavorites/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> DeleteKinds(int id)
+        public async Task<int> DeleteKinds(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletekinds/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deletemodel(int id)
+        public async Task<int> Deletemodel(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deletemodels/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Deleteseller(int id)
+        public async Task<int> Deleteseller(int id)
         {
-            throw new NotImplementedException();
+            return (await client.DeleteAsync(uri + $"Deleteseller/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
-
-        public Task<Carlist> Getbrand()
+       
+        public async Task<Brandlist> Getbrand()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Brandlist>(uri + "brandselector");
         }
 
         public async Task<BuyerList> Getbuyers()
         {
+           
             return await client.GetFromJsonAsync<BuyerList>(uri+ "buyerselector");
         }
 
-        public Task<Carlist> GetCars()
+        public async Task<Carlist> GetCars()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Carlist>(uri + "carsselector");
         }
 
-        public Task<Citylist> Getcities()
+        public async Task<Citylist> Getcities()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Citylist>(uri + "cityselector");
         }
 
-        public Task<Carlist> Getfavorites()
+        public async Task<Fvoritelist> Getfavorites()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Fvoritelist>(uri + "favoriteselector");
         }
 
-        public Task<Kindlist> GetKinds()
-        {
-            throw new NotImplementedException();
+        public async Task<Kindlist> GetKinds()
+        {//http://localhost:5203/api/Kind/kindselector
+            return await client.GetFromJsonAsync<Kindlist>(uri + "kindselector");
         }
 
-        public Task<Modellist> Getmodels()
+        public async Task<Modellist> Getmodels()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Modellist>(uri + "modelselector");
         }
 
-        public Task<Carlist> Getseller()
+        public async Task<Sellerlist> Getseller()
         {
-            throw new NotImplementedException();
+            return await client.GetFromJsonAsync<Sellerlist>(uri + "sellerselector");
         }
 
-        public Task<int> Insertbrand(Favorite k)
+        public async Task<int> Insertbrand(Brand k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Brand>(uri + $"Insertbrands", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertbuyers(Buyer k)
+
+        public async Task<int> Insertbuyers(Buyer k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Buyer>(uri + $"Insertbuyer", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertcar(Car k)
+        public async Task<int> Insertcar(Car k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Car>(uri + $"Insertcars", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertcity(City1 k)
+        public async Task<int> Insertcity(City1 k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<City1>(uri + $"Insertcities", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertfavorite(Favorite k)
+        public async Task<int> Insertfavorite(Favorite k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Favorite>(uri + $"Insertfavorites", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> InsertKinds(Kind k)
+        public async Task<int> InsertKinds(Kind k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Kind>(uri + $"Insertkinds", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertmodel(Model1 k)
+        public async Task<int> Insertmodel(Model1 k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Model1>(uri + $"Insertmodels", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Insertseller(Favorite k)
+        public async Task<int> Insertseller(Seller k)
         {
-            throw new NotImplementedException();
+            return (await client.PostAsJsonAsync<Seller>(uri + $"Insertsellers", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updatebrand(Favorite k)
+        public async Task<int> Updatebrand(Brand k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Brand>(uri + $"Insertbrands", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updatebuyers(Buyer k)
+
+        public async Task<int> Updatebuyers(Buyer k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Buyer>(uri + $"Insertbuyers", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updatecar(Car k)
+        public async Task<int> Updatecar(Car k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Car>(uri + $"Insertcar", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updatecity(City1 k)
+        public async Task<int> Updatecity(City1 k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<City1>(uri + $"Insertcity", k)).IsSuccessStatusCode ? 1 : 0;
+
         }
 
-        public Task<int> Updatefavorite(Favorite k)
+        public async Task<int> Updatefavorite(Favorite k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Favorite>(uri + $"Insertfavorite", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> UpdateKinds(Kind k)
+        public async Task<int> UpdateKinds(Kind k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Kind>(uri + $"Insertkind", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updatemodel(Model1 k)
+        public async Task<int> Updatemodel(Model1 k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Model1>(uri + $"Insertmodel", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-        public Task<int> Updateseller(Favorite k)
+        public async Task<int> Updateseller(Seller k)
         {
-            throw new NotImplementedException();
+            return (await client.PutAsJsonAsync<Seller>(uri + $"Insertseller", k)).IsSuccessStatusCode ? 1 : 0;
         }
+
+       
     }
 }

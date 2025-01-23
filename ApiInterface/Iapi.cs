@@ -34,20 +34,20 @@ namespace ApiInterface
         public Task<int> Insertcar(Car k);
         public Task<int> Updatecar(Car k);
 
-        public Task<Carlist> Getfavorites();
+        public Task<Fvoritelist> Getfavorites();
         public Task<int> Deletefavorite(int id);
         public Task<int> Insertfavorite(Favorite k);
         public Task<int> Updatefavorite(Favorite k);
 
-        public Task<Carlist> Getseller();
+        public Task<Sellerlist> Getseller();
         public Task<int> Deleteseller(int id);
-        public Task<int> Insertseller(Favorite k);
-        public Task<int> Updateseller(Favorite k);
+        public Task<int> Insertseller(Seller k);
+        public Task<int> Updateseller(Seller k);
 
-        public Task<Carlist> Getbrand();
+        public Task<Brandlist> Getbrand();
         public Task<int> Deletebrand(int id);
-        public Task<int> Insertbrand(Favorite k);
-        public Task<int> Updatebrand(Favorite k);
+        public Task<int> Insertbrand(Brand k);
+        public Task<int> Updatebrand(Brand k);
 
     }
 }
