@@ -1,10 +1,5 @@
 ﻿using Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApiInterface
 {
@@ -65,7 +60,7 @@ namespace ApiInterface
         {
             return (await client.DeleteAsync(uri + $"Deleteseller/{id}")).IsSuccessStatusCode ? 1 : 0;
         }
-       
+
         public async Task<Brandlist> Getbrand()
         {
             return await client.GetFromJsonAsync<Brandlist>(uri + "brandselector");
@@ -73,8 +68,8 @@ namespace ApiInterface
 
         public async Task<BuyerList> Getbuyers()
         {
-           
-            return await client.GetFromJsonAsync<BuyerList>(uri+ "buyerselector");
+
+            return await client.GetFromJsonAsync<BuyerList>(uri + "buyerselector");
         }
 
         public async Task<Carlist> GetCars()
@@ -190,6 +185,6 @@ namespace ApiInterface
             return (await client.PutAsJsonAsync<Seller>(uri + $"Insertseller", k)).IsSuccessStatusCode ? 1 : 0;
         }
 
-       
+
     }
 }
