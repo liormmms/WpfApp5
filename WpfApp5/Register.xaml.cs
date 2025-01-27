@@ -39,6 +39,7 @@ namespace WpfApp5
             int x = int.Parse(this.v.Text);
             Userinfo userinfo = new() { UserName = n, UserPass = x };
             List5.Add(userinfo);
+            Massege.Visibility = Visibility.Visible;
 
         }
     }

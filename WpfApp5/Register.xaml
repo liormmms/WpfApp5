@@ -1,4 +1,4 @@
-﻿<Page x:Class="WpfApp5.Page2"
+﻿<Page x:Class="WpfApp5.Page1"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp5"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page2">
+      Title="Page1">
 
     <Grid>
         <StackPanel>
@@ -15,14 +15,13 @@
             <TextBlock Text="password" Width="500" Height="50" Background="White"/>
             <TextBox  Width="400" Height="50" x:Name="v" Margin="10"/>
             <Button x:Name="send1" Content="send" Width="100" Height="50" Click="send2"/>
+            <TextBox Text="sended" Width="500" Height="50" Visibility="Hidden" x:Name="Massege"/>
             <TextBlock>
-                <Hyperlink Click="page3go">
-                    go to page
-                </Hyperlink>
+    <Hyperlink Click="page3go">
+        go to page
+    </Hyperlink>
             </TextBlock>
-
-
         </StackPanel>
-
+        
     </Grid>
 </Page>

@@ -6,31 +6,39 @@
       xmlns:local="clr-namespace:WpfApp5"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="mainPage">
+      Title="mainPage"
+      Background="Gray"
+      >
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height ="*"/>
-            <RowDefinition Height ="4*"/>
+            <RowDefinition Height ="*" x:Name="enterrow"/>
+            <RowDefinition Height ="*" x:Name="registerrow"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="sign in if you have an account" Background="Snow" Width="200" Height="20" >
+                
+            </TextBlock>
 
-            <TextBlock>
-                <Hyperlink Click="register">
+            <TextBlock Background="Snow" Width="200" Height="15">
+                <Hyperlink Click="enter">
                     register
                 </Hyperlink>
             </TextBlock>
-            <TextBlock>
-    <Hyperlink Click="enter">
+            <TextBlock Text="register if you dont have an account" Background="Snow" Width="200" Height="20" Margin="0,30,0,0" >
+
+            </TextBlock>
+            <TextBlock Width="200" Height="15" Background="Snow">
+    <Hyperlink Click="register" >
         enter
     </Hyperlink>
 
             </TextBlock>
-
+        
         </StackPanel>
 
-        <Image Source="c:\users\user\source\repos\wpfapp5\wpfapp5\icon\1984811394.webp" Height="850" Width="2000" Grid.Row="1"/>
+        <Image Source="c:\users\user\source\repos\wpfapp5\wpfapp5\icon\1984811394.webp" Height="1000" Width="500" Margin="0,150,0,0"/>
 
     </Grid>
 </Page>

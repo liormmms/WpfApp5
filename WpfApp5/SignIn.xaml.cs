@@ -22,25 +22,35 @@ namespace WpfApp5
     public partial class Page2 : Page
         
     {
-        public static List<Userinfo> List4 = new();
+        
         public Page2()
         {
             InitializeComponent();
         }
 
+        
         private void page3go(object sender, RoutedEventArgs e)
         {
-            NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4());
-        }
-
-        private void send2(object sender, RoutedEventArgs e)
-        {
+            
+           
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);
-            Userinfo userinfo = new() {UserName=n,UserPass = x };
-            List4.Add(userinfo);
-
+            Userinfo userinfo = new() { UserName = n, UserPass = x };
+            bool m = false;
+            foreach (Userinfo u in Page1.List5)
+            {
+                if (userinfo == u)
+                    m = true;
+                else
+                    Console.WriteLine("incorrect password or name");
+            }
+            if (m == true)
+            {
+                NavigationService nv = NavigationService.GetNavigationService(this);
+                nv.Navigate(new Page4());
+            }
         }
+
+        
     }
 }
