@@ -24,7 +24,6 @@ namespace WpfApp5
         {
             InitializeComponent();
           
-            myLv.ItemsSource = Page1.List5;
 
         }
 
