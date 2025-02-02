@@ -35,11 +35,11 @@ namespace WpfApp5
            
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);
-            Userinfo userinfo = new() { UserName = n, UserPass = x };
+            Userinfo userinfo1 = new() { UserName = n, UserPass = x };
             bool m = false;
             foreach (Userinfo u in Page1.List5)
             {
-                if (userinfo == u)
+                if (userinfo1.UserPass == u.UserPass&& userinfo1.UserName==u.UserName)
                     m = true;
                 else
                     Console.WriteLine("incorrect password or name");

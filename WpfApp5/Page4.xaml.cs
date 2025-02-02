@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.DirectoryServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace WpfApp5
 {
@@ -20,30 +23,19 @@ namespace WpfApp5
     /// </summary>
     public partial class Page4 : Page
     {
+
+        CarDb car1 = new CarDb();
         public Page4()
         {
             InitializeComponent();
-          
+
+            Listcar.ItemsSource = car1.SelectAll();
 
         }
+        
 
-        private void updateclick(object sender, RoutedEventArgs e)
-        {
-            Userinfo x = (Userinfo)myLv.SelectedItem;
-            (Page1.List5).Remove(x);
-            NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new add());
-            myLv.ItemsSource=null;
-            myLv.ItemsSource = Page1.List5;
-        }
+       
 
-        private void delclick(object sender, RoutedEventArgs e)
-        {
-            Userinfo x = (Userinfo)myLv.SelectedItem;
-            (Page1.List5).Remove(x);
-            myLv.ItemsSource = null;
-            myLv.ItemsSource = Page1.List5;
-
-        }
+        
     }
 }

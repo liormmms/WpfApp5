@@ -6,22 +6,31 @@
       xmlns:local="clr-namespace:WpfApp5"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page4">
-
+      Title="Page4"
+      Background="AntiqueWhite">
+   
     <Grid>
-        <ListView x:Name="myLv">
-            <ListView.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="update" Click="updateclick"/>
-                    <MenuItem Header="del" Click="delclick"/>
-                </ContextMenu>
-            </ListView.ContextMenu>
-            <ListView.View>
-                <GridView>
-                <GridViewColumn Header="username" DisplayMemberBinding="{Binding UserName}"/>
-                    <GridViewColumn Header="userpass" DisplayMemberBinding="{Binding UserPass}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="6*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal">
+
+            <ListBox  Background="White" BorderThickness="2" Width="266.66666667" x:Name="citybutton">
+                <TextBlock Text="pick city" TextElement.FontSize="40" VerticalAlignment="Center"/>
+            </ListBox>
+
+            
+        </StackPanel>
+        <DataGrid x:Name="Listcar" Grid.Row="1" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="model name"  />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+            
+
+        
     </Grid>
 </Page>

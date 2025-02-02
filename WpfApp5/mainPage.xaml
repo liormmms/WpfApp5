@@ -17,7 +17,7 @@
             <RowDefinition Height ="*" x:Name="registerrow"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="sign in if you have an account" Background="Snow" Width="200" Height="20" >
+            <TextBlock Text="sign in if you dont have an account" Background="Snow" Width="200" Height="20" >
                 
             </TextBlock>
 
@@ -26,7 +26,7 @@
                     register
                 </Hyperlink>
             </TextBlock>
-            <TextBlock Text="register if you dont have an account" Background="Snow" Width="200" Height="20" Margin="0,30,0,0" >
+            <TextBlock Text="register if you have an account" Background="Snow" Width="200" Height="20" Margin="0,30,0,0" >
 
             </TextBlock>
             <TextBlock Width="200" Height="15" Background="Snow">

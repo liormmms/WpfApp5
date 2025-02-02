@@ -30,10 +30,10 @@ namespace WpfApp5
         private void page3go(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4());
+            nv.Navigate(new mainPage());
         }
 
-        private void send2(object sender, RoutedEventArgs e)
+       public void send2(object sender, RoutedEventArgs e)
         {
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);

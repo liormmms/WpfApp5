@@ -22,8 +22,8 @@ namespace ViewModel
         public Carlist SelectAll()
         {
             command.CommandText = $"SELECT * FROM Car";
-            Carlist groupList = new Carlist(base.Select());
-            return groupList;
+            Carlist listcar1 = new Carlist(base.Select());
+            return listcar1;
         }
 
         protected override void CreateDeletedSQL(Base entity, OleDbCommand cmd)
