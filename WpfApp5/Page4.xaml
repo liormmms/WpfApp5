@@ -17,11 +17,27 @@
         
         <StackPanel Orientation="Horizontal">
 
-            <ListBox  Background="White" BorderThickness="2" Width="266.66666667" x:Name="citybutton">
-                <TextBlock Text="pick city" TextElement.FontSize="40" VerticalAlignment="Center"/>
-            </ListBox>
-
             
+
+            <ComboBox   Text="pick kind" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="kindbutton">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding StringFormat='.{0:p1}'}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox   Text="pick city" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="citybutton">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding StringFormat='.{0:p1}'}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox   Text="pick price range" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="pricebutton">
+                <ComboBoxItem Content="20,000" MouseDoubleClick="ClickTwenty"/>
+                <ComboBoxItem Content="50,000"/>
+                <ComboBoxItem Content="50,000>"/>
+            </ComboBox>
         </StackPanel>
         <DataGrid x:Name="Listcar" Grid.Row="1" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True">
             <DataGrid.Columns>

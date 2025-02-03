@@ -17,28 +17,28 @@
             <RowDefinition Height ="*" x:Name="registerrow"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="sign in if you dont have an account" Background="Snow" Width="200" Height="20" >
+          <TextBlock Text="sign in if you dont have an account" Background="Gray" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20">
                 
-            </TextBlock>
+          </TextBlock>
 
-            <TextBlock Background="Snow" Width="200" Height="15">
-                <Hyperlink Click="enter">
+          <TextBlock Background="Gray" Width="200" Height="15" >
+            <Hyperlink Click="enter">
                     register
-                </Hyperlink>
-            </TextBlock>
-            <TextBlock Text="register if you have an account" Background="Snow" Width="200" Height="20" Margin="0,30,0,0" >
+            </Hyperlink>
+          </TextBlock>
+          <TextBlock Text="sign in if you dont have an account" Background="Gray" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Margin="50,50,50,50" >
 
-            </TextBlock>
-            <TextBlock Width="200" Height="15" Background="Snow">
-    <Hyperlink Click="register" >
-        enter
-    </Hyperlink>
+          </TextBlock>
+            <TextBlock Background="Gray" Width="200" Height="15" HorizontalAlignment="Center">
+            <Hyperlink Click="register" >
+                    enter
+            </Hyperlink>
 
-            </TextBlock>
+          </TextBlock>
         
         </StackPanel>
 
-        <Image Source="c:\users\user\source\repos\wpfapp5\wpfapp5\icon\1984811394.webp" Height="1000" Width="500" Margin="0,150,0,0"/>
+        
 
     </Grid>
 </Page>

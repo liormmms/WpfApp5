@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,17 +26,32 @@ namespace WpfApp5
     {
 
         CarDb car1 = new CarDb();
+        KindDb kind1 = new KindDb();
+        CityDb city2 = new CityDb();
         public Page4()
         {
             InitializeComponent();
 
-            Listcar.ItemsSource = car1.SelectAll();
+            Listcar.ItemsSource = car1.SelectAll().Select(x=>x.Modelname.Moedlname).ToList();
+            kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind).ToList();
+            citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname).ToList();
+            
 
         }
-        
+        private void Kindbutton_selection(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+           
+        }
 
        
 
-        
+        private void ClickTwenty(object sender, MouseButtonEventArgs e)
+        {
+           
+             
+           
+            
+            
+        }
     }
 }
