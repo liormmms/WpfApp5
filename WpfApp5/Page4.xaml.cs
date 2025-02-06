@@ -28,6 +28,9 @@ namespace WpfApp5
         CarDb car1 = new CarDb();
         KindDb kind1 = new KindDb();
         CityDb city2 = new CityDb();
+        List<Car> ListcarCopy = new List<Car>();
+        List<Car> ListcarSave = new List<Car>();
+
         public Page4()
         {
             InitializeComponent();
@@ -35,7 +38,9 @@ namespace WpfApp5
             Listcar.ItemsSource = car1.SelectAll().Select(x=>x.Modelname.Moedlname).ToList();
             kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind).ToList();
             citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname).ToList();
-            
+            ListcarCopy = car1.SelectAll();
+            ListcarSave = car1.SelectAll();
+
 
         }
         private void Kindbutton_selection(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -45,13 +50,58 @@ namespace WpfApp5
 
        
 
-        private void ClickTwenty(object sender, MouseButtonEventArgs e)
+       
+
+        private void ClickPrice(object sender, SelectionChangedEventArgs e)
         {
+            if(pricebutton.SelectedItem is ComboBoxItem SelectedItem)
+            {
+                string SelectedText = SelectedItem.Content.ToString();
+                if (SelectedText == "20,000")
+                {
+                    ListcarCopy = ListcarSave;
+                    foreach (Car c in ListcarCopy)
+                    {
+                        if (c.Price > 20000)
+                        {
+                            ListcarCopy.Remove(c);
+                        }
+                    }
+                    Listcar.ItemsSource = ListcarCopy;
+                }
+
+                if (SelectedText == "50,000")
+                {
+                    ListcarCopy = ListcarSave;
+                    foreach (Car c in ListcarCopy)
+                    {
+                        if (c.Price > 50000)
+                        {
+                            ListcarCopy.Remove(c);
+                        }
+                    }
+                    Listcar.ItemsSource = ListcarCopy;
+                }
+
+                if (SelectedText == ">50,000")
+                {
+                    ListcarCopy = ListcarSave;
+                    foreach (Car c in ListcarCopy)
+                    {
+                        if (c.Price < 50000)
+                        {
+                            ListcarCopy.Remove(c);
+                        }
+                    }
+                    Listcar.ItemsSource = ListcarCopy;
+                }
+            }
+            
            
-             
-           
+
             
             
+
         }
     }
 }
