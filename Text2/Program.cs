@@ -187,7 +187,7 @@ foreach (Car c in cars)
 }
 Car cu2 = new Car() { Location = csts[0], Price = 44400, Modelname = ms[0], CarSeller = sts[1], CarBrand = brs[0], Carkind = kinds[0] };
 cu2.Price = 49000;
-cad.Update(cay);
+cad.Update(cu2);
 cad.SaveChanges();
 Carlist cras = cad.SelectAll();
 foreach (Car c in cras)

@@ -1,5 +1,6 @@
 ﻿using Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
@@ -28,8 +29,10 @@ namespace WpfApp5
         CarDb car1 = new CarDb();
         KindDb kind1 = new KindDb();
         CityDb city2 = new CityDb();
-        List<Car> ListcarCopy = new List<Car>();
         List<Car> ListcarSave = new List<Car>();
+       
+        
+
 
         public Page4()
         {
@@ -38,15 +41,11 @@ namespace WpfApp5
             Listcar.ItemsSource = car1.SelectAll().Select(x=>x.Modelname.Moedlname).ToList();
             kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind).ToList();
             citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname).ToList();
-            ListcarCopy = car1.SelectAll();
             ListcarSave = car1.SelectAll();
 
 
         }
-        private void Kindbutton_selection(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-           
-        }
+        
 
        
 
@@ -54,54 +53,72 @@ namespace WpfApp5
 
         private void ClickPrice(object sender, SelectionChangedEventArgs e)
         {
-            if(pricebutton.SelectedItem is ComboBoxItem SelectedItem)
+            List<Car> cList = new();
+            int x=pricebutton.SelectedIndex;
+            int price;
+            if (x == 0)
             {
-                string SelectedText = SelectedItem.Content.ToString();
-                if (SelectedText == "20,000")
-                {
-                    ListcarCopy = ListcarSave;
-                    foreach (Car c in ListcarCopy)
-                    {
-                        if (c.Price > 20000)
-                        {
-                            ListcarCopy.Remove(c);
-                        }
-                    }
-                    Listcar.ItemsSource = ListcarCopy;
-                }
-
-                if (SelectedText == "50,000")
-                {
-                    ListcarCopy = ListcarSave;
-                    foreach (Car c in ListcarCopy)
-                    {
-                        if (c.Price > 50000)
-                        {
-                            ListcarCopy.Remove(c);
-                        }
-                    }
-                    Listcar.ItemsSource = ListcarCopy;
-                }
-
-                if (SelectedText == ">50,000")
-                {
-                    ListcarCopy = ListcarSave;
-                    foreach (Car c in ListcarCopy)
-                    {
-                        if (c.Price < 50000)
-                        {
-                            ListcarCopy.Remove(c);
-                        }
-                    }
-                    Listcar.ItemsSource = ListcarCopy;
-                }
+                cList = ListcarSave.FindAll(x => x.Price <= 20000);
             }
+            else if (x == 1)
+            {
+             
+                 cList = ListcarSave.FindAll(x => x.Price <= 50000);
+             
+            }
+            else if (x == 2)
+            {
+
+                cList = ListcarSave.FindAll(x => x.Price > 50000);
+
+            }
+            Listcar.ItemsSource = cList;
+            ListcarSave = cList;
+
+        }
             
            
 
             
             
 
+        
+
+        private void ClickKind(object sender, SelectionChangedEventArgs e)
+        {          
+            List<Car> KList = new List<Car>();
+            foreach (Car c in ListcarSave)
+            {
+                if (c.Carkind.kind == kindbutton.SelectedItem.ToString())
+                {
+                    KList.Add(c);
+                }
+                Listcar.ItemsSource = KList;
+                ListcarSave = KList;
+            }
+
+        }
+
+        private void ClickCity(object sender, SelectionChangedEventArgs e)
+        {          
+            List<Car> CIList = new List<Car>();
+                foreach (Car c in ListcarSave)
+                {
+                    if (c.Location.cityname == citybutton.SelectedItem.ToString())
+                    {
+                    CIList.Add(c);
+                }
+                    Listcar.ItemsSource = CIList;
+                    ListcarSave = CIList;
+                }
+            
+
+        }
+
+        private void CarSelect(object sender, RoutedEventArgs e)
+        {
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new CarWpf());
         }
     }
 }
