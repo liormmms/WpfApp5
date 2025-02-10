@@ -19,6 +19,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+       <TextBlock
         
         
     </Grid>
