@@ -403,7 +403,7 @@
                                             <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="2" Maximum="{TemplateBinding ScrollableHeight}" Orientation="Vertical" Grid.Row="1" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
                                             <Grid Grid.Column="1" Grid.Row="2">
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition DisplayMemberBinding="{Binding Path=CarSeller.phone}"  Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                                    <ColumnDefinition/>
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
@@ -463,12 +463,12 @@
                 <ComboBoxItem Content="50,000>" />
             </ComboBox>
         </StackPanel>
-        <DataGrid Style="{DynamicResource DataGridStyle2}" x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0">
+        <DataGrid Style="{DynamicResource DataGridStyle2}" x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelected">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="CarSelect" />
+                            <Button/>
                         </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

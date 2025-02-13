@@ -24,5 +24,10 @@ namespace WpfApp5
         {
             InitializeComponent();
         }
+        public CarWpf(object message)
+        {
+            MessageBox.Show(message.ToString());
+            
+        }
     }
 }
