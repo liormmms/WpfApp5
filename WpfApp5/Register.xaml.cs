@@ -27,11 +27,7 @@ namespace WpfApp5
             InitializeComponent();
         }
 
-        private void page3go(object sender, RoutedEventArgs e)
-        {
-            NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new mainPage());
-        }
+        
 
        public void send2(object sender, RoutedEventArgs e)
         {
@@ -40,7 +36,8 @@ namespace WpfApp5
             Userinfo userinfo = new() { UserName = n, UserPass = x };
             List5.Add(userinfo);
             Massege.Visibility = Visibility.Visible;
-
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new mainPage());
         }
     }
 

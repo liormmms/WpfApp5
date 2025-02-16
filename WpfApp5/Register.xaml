@@ -211,11 +211,7 @@
 
 
                 <TextBox Text="sended :)" Width="500" Height="50" Visibility="Hidden" x:Name="Massege" Background="Beige" TextElement.FontSize="30" TextElement.FontStyle="Normal" TextElement.FontWeight="Medium" TextElement.Foreground="Black" BorderThickness="0"/>
-            <TextBlock>
-    <Hyperlink Click="page3go">
-        go to page
-    </Hyperlink>
-            </TextBlock>
+           
         </StackPanel>
         
     </Grid>

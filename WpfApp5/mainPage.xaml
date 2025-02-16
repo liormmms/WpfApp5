@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="mainPage"  
-      Background="Gray"
+      Background="White"
       >
     <Page.Resources>
         <Style x:Key="FocusVisual">
@@ -180,17 +180,17 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height ="*" x:Name="enterrow"/>
-            <RowDefinition Height ="*" x:Name="registerrow"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical">
-          <TextBlock Text="sign in if you dont have an account" Background="Gray" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20">
-          </TextBlock>
-
-            <Button Style="{DynamicResource ButtonStyle3}"  Content="sign in" Background="Blue" Width="300" Height="40" Click="enter"/>
-            <TextBlock Text="sign in if you dont have an account" Background="Gray" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Margin="50,25,50,0" />
-            <Button Style="{DynamicResource ButtonStyle2}"  Content="register" Background="Blue" Width="300" Height="40" Click="register"/>           
-            <TextBlock Background="Gray" Width="200" Height="15" HorizontalAlignment="Center">
+        <Image Grid.Row="0" Width="400" Height="200" Source="c:\users\user\source\repos\wpfapp5\wpfapp5\icon\car-sale-car-dealers-car-sell-vector-icon-isolated-white-background_995545-86.avif
+" />
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBlock Text="sign in if you dont have an account" Background="White" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Grid.Row="1"/>
+            <Button Style="{DynamicResource ButtonStyle3}"  Content="sign in" Background="Blue" Width="300" Height="40" Click="enter" Grid.Row="1"/>
+            <TextBlock Text="sign in if you dont have an account" Background="White" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Margin="50,25,50,0" Grid.Row="1"/>
+            <Button Style="{DynamicResource ButtonStyle2}"  Content="register" Background="Blue" Width="300" Height="40" Click="register" Grid.Row="1"/>           
+            <TextBlock Background="White" Width="200" Height="15" HorizontalAlignment="Center">
   <Hyperlink Click="skip">
           skip
   </Hyperlink>

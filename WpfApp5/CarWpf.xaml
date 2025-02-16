@@ -17,7 +17,7 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="seller" Width="114" Height="30" TextElement.FontSize="15" />
+                <TextBlock Text="seller" Width="113" Height="30" TextElement.FontSize="15" />
                 <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">

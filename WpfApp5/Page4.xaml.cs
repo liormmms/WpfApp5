@@ -38,12 +38,16 @@ namespace WpfApp5
         {
             InitializeComponent();
 
-            Listcar.ItemsSource = car1.SelectAll().Select(x=>x.Modelname.Moedlname).ToList();
-            kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind).ToList();
-            citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname).ToList();
+            Listcar.ItemsSource = car1.SelectAll().Select(x => x);
+            kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind);
+            citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname);
             ListcarSave = car1.SelectAll();
 
 
+        }
+        public List<Car> Returncar()
+        {
+            return ListcarSave;
         }
         
 
@@ -115,15 +119,15 @@ namespace WpfApp5
 
         }
 
+
+       
+
         private void CarSelect(object sender, RoutedEventArgs e)
         {
             var selectedRow = Listcar.SelectedItem;
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow));
+            Car carw = (Car)selectedRow;
+            nv.Navigate(new CarWpf(carw));
         }
-
-       
-
-       
     }
 }

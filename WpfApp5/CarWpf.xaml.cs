@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,10 @@ namespace WpfApp5
         {
             InitializeComponent();
         }
-        public CarWpf(object message)
+        public CarWpf(Car car_message)
         {
-            MessageBox.Show(message.ToString());
+           
+            ModelText.Text = car_message.Modelname.ToString();
             
         }
     }

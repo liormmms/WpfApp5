@@ -431,8 +431,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height ="*"/>
@@ -463,16 +463,9 @@
                 <ComboBoxItem Content="50,000>" />
             </ComboBox>
         </StackPanel>
-        <DataGrid Style="{DynamicResource DataGridStyle2}" x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelected">
+        <DataGrid Style="{DynamicResource DataGridStyle2}" x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelect">
             <DataGrid.Columns>
-                <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button/>
-                        </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn >
+                <DataGridTextColumn Header="model" Binding="{Binding model}" >
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter  Property="Margin" Value="0,20,0,20"/>
