@@ -21,15 +21,24 @@ namespace WpfApp5
     /// </summary>
     public partial class CarWpf : Page
     {
-        public CarWpf()
+        Car carTake;
+
+
+        public CarWpf(Car car)
         {
-            InitializeComponent();
-        }
-        public CarWpf(Car car_message)
-        {
-           
-            ModelText.Text = car_message.Modelname.ToString();
+         InitializeComponent();
+
+            carTake = car;
+
+            ModelText.Text = carTake.Modelname.Moedlname;
+            priceText.Text = carTake.Price.ToString();
+            kmText.Text = carTake.km.ToString();
+            sellerText.Text = carTake.CarSeller.fname;
+            brandText.Text = carTake.CarBrand.Bname;
+            kindText.Text = carTake.Carkind.kind;
+            cityText.Text = carTake.Location.cityname;
             
         }
+        
     }
 }

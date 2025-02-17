@@ -176,7 +176,7 @@ foreach (Buyer c in buyers2)
 #endregion
 #region
 
-Car cay = new Car() { Location = csts[0], Price = 44400, Modelname = ms[0], CarSeller = sts[1], CarBrand = brs[0], Carkind = kinds[0] };
+Car cay = new Car() { Location = csts[0], Price = 44400, Modelname = ms[0], CarSeller = sts[1], CarBrand = brs[0], Carkind = kinds[0], pic = "yuy", km = 5666 };
 CarDb cad = new CarDb();
 cad.Insert(cay);
 cad.SaveChanges();
@@ -185,7 +185,7 @@ foreach (Car c in cars)
 {
     //Console.WriteLine(c.Modelname + " " + c.Carkind + " " + c.CarSeller.fname);
 }
-Car cu2 = new Car() { Location = csts[0], Price = 44400, Modelname = ms[0], CarSeller = sts[1], CarBrand = brs[0], Carkind = kinds[0] };
+Car cu2 = new Car() { Location = csts[0], Price = 44400, Modelname = ms[0], CarSeller = sts[1], CarBrand = brs[0], Carkind = kinds[0], pic="yuy", km=5666 };
 cu2.Price = 49000;
 cad.Update(cu2);
 cad.SaveChanges();

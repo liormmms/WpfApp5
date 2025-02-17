@@ -9,41 +9,43 @@
       Title="CarWpf">
 
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.65*"/>
             <RowDefinition Height="1.2*"/>
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Grid.Row="1" Width="100" HorizontalAlignment="Left" Height="35" Content="buy" Background="Blue" TextElement.FontWeight="Bold"/>
+        <TextBlock  x:Name="ModelText" Grid.Row="1" Width="150" HorizontalAlignment="Right" Height="35" Background="White" TextElement.FontWeight="Bold" TextElement.FontSize="25"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="3,0,0,189" Grid.RowSpan="2">
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
                 <TextBlock Text="seller" Width="113" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="sellerText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="brand" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="brand" Width="133" Height="30" TextElement.FontSize="15" />
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="brandText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="kind" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="kind" Width="133" Height="30" TextElement.FontSize="15" />
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="kindText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="city" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="city" Width="133" Height="30" TextElement.FontSize="15" />
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="cityText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="km" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="km" Width="133" Height="30" TextElement.FontSize="15" />
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="kmText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-            <TextBlock Text="price" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray"/>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Right">
+                <TextBlock Text="price" Width="133" Height="30" TextElement.FontSize="15" />
+                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="priceText"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
-                <TextBlock Text="modelname" Width="114" Height="30" TextElement.FontSize="15" />
-                <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Gray" x:Name="ModelText"/>
-            </StackPanel>
+           
+                
+                
             
         </StackPanel>
 

@@ -49,6 +49,7 @@ namespace ViewModel
             usr.CarSeller = sellerDb.SelectById(int.Parse(reader["seller"].ToString()));
             usr.CarBrand = BrandDb.SelectById(int.Parse(reader["brandname"].ToString()));
             usr.km = int.Parse(reader["km"].ToString());
+            usr.pic = reader["picture"].ToString();
             base.CreateModel(entity);
             return usr;
         }
@@ -62,7 +63,7 @@ namespace ViewModel
             if (car != null)
             {
                 //string sql = $"Insert into buyer (tz,fname,lname,city) values (@tz,@fname,@lname,@city)";
-                string sql = $"Insert into car (brandName,seller,price,location,kind,modelname,km) values (@CarBrand,@seller,@price,@location,@kind,@modelname,@km)";
+                string sql = $"Insert into car (brandName,Carseller,price,location,kind,modelname,km,pic) values (@CarBrand,@Seller,@price,@location,@kind,@modelname,@km,@picture)";
                 command.CommandText = sql;
                 command.Parameters.Add(new OleDbParameter("@CarBrand", car.CarBrand.Id));
                 command.Parameters.Add(new OleDbParameter("@seller", car.CarSeller.Id));
@@ -71,6 +72,7 @@ namespace ViewModel
                 command.Parameters.Add(new OleDbParameter("@kind", car.Carkind.Id));
                 command.Parameters.Add(new OleDbParameter("@modelname", car.Modelname.Id));
                 command.Parameters.Add(new OleDbParameter("@km", car.km));
+                command.Parameters.Add(new OleDbParameter("@pic", car.pic));
 
 
 
@@ -88,7 +90,7 @@ namespace ViewModel
             {
 
                 string sql = $"UPDATE car " +
-                             $"set brandname=@CarBrnad, seller=@carseller, price=@price, location=@location, kind=@kind, picture=@picture, modelname=@modelname, km=@km " +
+                             $"set brandname=@CarBrnad, seller=@carseller, price=@price, location=@location, kind=@kind, picture=@picture, modelname=@modelname, km=@km, pic=@pic" +
                              $" WHERE id=@Id";
                 command.CommandText = sql;
                 command.Parameters.Add(new OleDbParameter("@CarBrand", car.CarBrand.Id));
@@ -99,6 +101,7 @@ namespace ViewModel
                 command.Parameters.Add(new OleDbParameter("@picture",""));
                 command.Parameters.Add(new OleDbParameter("@modelname", car.Modelname.Id));
                 command.Parameters.Add(new OleDbParameter("@km", car.km));
+                command.Parameters.Add(new OleDbParameter("@pic", car.pic));
 
 
 

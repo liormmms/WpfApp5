@@ -124,10 +124,11 @@ namespace WpfApp5
 
         private void CarSelect(object sender, RoutedEventArgs e)
         {
-            var selectedRow = Listcar.SelectedItem;
+            int place = Listcar.SelectedIndex;
+            Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            Car carw = (Car)selectedRow;
-            nv.Navigate(new CarWpf(carw));
+            nv.Navigate(new CarWpf(selectedRow));
+           
         }
     }
 }

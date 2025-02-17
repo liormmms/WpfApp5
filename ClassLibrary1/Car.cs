@@ -15,6 +15,7 @@ namespace Model
         public City1 Location { get; set; }
         public Kind Carkind { get; set; }
         public int km { get; set; }
+        public string pic { get; set; }
 
 
 
