@@ -37,8 +37,23 @@ namespace WpfApp5
             brandText.Text = carTake.CarBrand.Bname;
             kindText.Text = carTake.Carkind.kind;
             cityText.Text = carTake.Location.cityname;
-            
+            BitmapImage carimage = new BitmapImage(new Uri(carTake.pic));
+            imagecar.Source = carimage;
+
         }
+
         
+
+        private void BackMain(object sender, RoutedEventArgs e)
+        {
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new Page4());
+        }
+
+        private void GoBuy(object sender, RoutedEventArgs e)
+        {
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new BuyPage());
+        }
     }
 }
