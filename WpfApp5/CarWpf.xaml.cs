@@ -53,7 +53,7 @@ namespace WpfApp5
         private void GoBuy(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new BuyPage());
+            nv.Navigate(new BuyPage(carTake));
         }
     }
 }

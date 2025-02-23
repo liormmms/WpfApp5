@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace WpfApp5
     /// </summary>
     public partial class BuyPage : Page
     {
-        public BuyPage()
+        Car carbuy;
+        public BuyPage( Car carbuy)
         {
             InitializeComponent();
+            modelbuy.Text = carbuy.Modelname.Moedlname;
+            pricebuy.Text = carbuy.Price.ToString();
         }
     }
 }
