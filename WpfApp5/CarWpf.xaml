@@ -22,7 +22,7 @@
             <Image Source="/icon/BackButton.svg.png" />
         </Button>
         <Button Grid.Row="1" Width="100" HorizontalAlignment="Left" Height="35" Content="buy" Background="Blue" TextElement.FontWeight="Bold" Click="GoBuy"/>
-        <Button Grid.Row="1" Width="110" HorizontalAlignment="Left" Height="35" Content="remamber the car" Background="Blue" TextElement.FontWeight="Bold" Margin="110,0,0,0"/>
+        <Button Grid.Row="1" Width="110" HorizontalAlignment="Left" Height="35" Content="remamber the car" Background="Blue" TextElement.FontWeight="Bold" Margin="110,0,0,0" Click="Remamber"/>
         <TextBlock  x:Name="ModelText" Grid.Row="1" Width="150" HorizontalAlignment="Right" Height="35" Background="White" TextElement.FontWeight="Bold" TextElement.FontSize="25"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="3,0,0,189" Grid.RowSpan="2">
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">

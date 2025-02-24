@@ -15,7 +15,39 @@
             <RowDefinition Height="0.45*"/>
 
         </Grid.RowDefinitions>
+        
         <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="modelbuy" TextElement.FontSize="20"/>
+        
         <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="pricebuy" TextElement.FontSize="20" />
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="first name" />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,21,0,40" x:Name="fnametext"/>
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  Text="last name"  />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,81,0,40" x:Name="lnametext" />
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Text="adress" Margin="0,81,0,21"  />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom"  x:Name="adresstext"  />
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="right" VerticalAlignment="Top"  Text="credit card" />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,21,0,40" x:Name="creditext" />
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center"  Text="gmail" />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,81,0,40" x:Name="gmailtext" />
+        
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Text="civ" Margin="0,81,0,21" />
+        
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="civtext"/>
+        
+        <Button Grid.Row="2" Width="150"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle"/>
+        
+        <TextBlock Grid.Row="2" Width="150" Height="50" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Collapsed" x:Name="Finalmassge"/>
+
+        <Button Grid.Row="2" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Return"/>
     </Grid>
 </Page>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace WpfApp5
 {
@@ -22,6 +23,7 @@ namespace WpfApp5
     public partial class CarWpf : Page
     {
         Car carTake;
+        FavoriteDb favorite;
 
 
         public CarWpf(Car car)
@@ -54,6 +56,11 @@ namespace WpfApp5
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
             nv.Navigate(new BuyPage(carTake));
+        }
+
+        private void Remamber(object sender, RoutedEventArgs e)
+        {
+            favorite.Insert(carTake);
         }
     }
 }

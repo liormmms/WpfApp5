@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace WpfApp5
 {
@@ -22,11 +23,59 @@ namespace WpfApp5
     public partial class BuyPage : Page
     {
         Car carbuy;
+        CarDb carb;
+        bool Iscomplete=true;
         public BuyPage( Car carbuy)
         {
             InitializeComponent();
             modelbuy.Text = carbuy.Modelname.Moedlname;
             pricebuy.Text = carbuy.Price.ToString();
+        }
+
+        private void Buyfinle(object sender, RoutedEventArgs e)
+        {
+            Iscomplete = true;
+            if (fnametext.Text == "")
+            {
+                fnametext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (lnametext.Text == "")
+            {
+                lnametext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (adresstext.Text == "")
+            {
+                adresstext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (creditext.Text == "")
+            {
+                creditext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (gmailtext.Text == "")
+            {
+                gmailtext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (civtext.Text == "")
+            {
+                civtext.BorderBrush = new SolidColorBrush(Colors.Red);
+                Iscomplete = false;
+            }
+            if (Iscomplete == true)
+            {
+                //carb.Delete(carbuy);
+                Finalmassge.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Return(object sender, RoutedEventArgs e)
+        {
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new Page4());
         }
     }
 }
