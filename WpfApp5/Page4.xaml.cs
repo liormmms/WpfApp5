@@ -42,6 +42,7 @@ namespace WpfApp5
             kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind);
             citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname);
             ListcarSave = car1.SelectAll();
+            DataContext = this;
 
 
         }
@@ -57,6 +58,7 @@ namespace WpfApp5
 
         private void ClickPrice(object sender, SelectionChangedEventArgs e)
         {
+            ListcarSave = car1.SelectAll();
             List<Car> cList = new();
             int x=pricebutton.SelectedIndex;
             int price;
@@ -89,7 +91,8 @@ namespace WpfApp5
         
 
         private void ClickKind(object sender, SelectionChangedEventArgs e)
-        {          
+        {
+            ListcarSave = car1.SelectAll();
             List<Car> KList = new List<Car>();
             foreach (Car c in ListcarSave)
             {
@@ -104,7 +107,8 @@ namespace WpfApp5
         }
 
         private void ClickCity(object sender, SelectionChangedEventArgs e)
-        {          
+        {
+            ListcarSave = car1.SelectAll();
             List<Car> CIList = new List<Car>();
                 foreach (Car c in ListcarSave)
                 {

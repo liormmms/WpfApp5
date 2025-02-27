@@ -8,6 +8,9 @@ namespace Model
 {
     public class Favorite:Base
     {
+       
+
         public string car { get; set; }
+        
     }
 }

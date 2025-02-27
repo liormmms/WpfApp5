@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -60,7 +61,11 @@ namespace WpfApp5
 
         private void Remamber(object sender, RoutedEventArgs e)
         {
-            favorite.Insert(carTake);
+            Favorite favorite = new Favorite() {car=carTake.ToString() };
+            FavoriteDb fyd = new FavoriteDb();
+            fyd.Insert(favorite);
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new FavoritePage(carTake));
         }
     }
 }

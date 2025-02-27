@@ -27,10 +27,7 @@ namespace ViewModel
         }
 
 
-        protected override Base NewEntity()
-        {
-            return new Favorite();
-        }
+        
 
         public static Favorite SelectById(int id)
         {

@@ -463,9 +463,9 @@
                 <ComboBoxItem Content="50,000>" />
             </ComboBox>
         </StackPanel>
-        <DataGrid Style="{DynamicResource DataGridStyle2}" x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelect">
+        <DataGrid x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelect" ItemsSource="{Binding ListcarSave}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="model" Binding="{Binding model}" >
+                <DataGridTextColumn>
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter  Property="Margin" Value="0,20,0,20"/>
@@ -473,8 +473,8 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
             </DataGrid.Columns>
-            
-            
+
+
         </DataGrid>
 
 
