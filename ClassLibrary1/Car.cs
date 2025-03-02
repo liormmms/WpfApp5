@@ -16,6 +16,7 @@ namespace Model
         public Kind Carkind { get; set; }
         public int km { get; set; }
         public string pic { get; set; }
+        public bool Isfavorite { get; set; }
 
 
 

@@ -1,5 +1,6 @@
 ﻿using Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
@@ -24,12 +25,14 @@ namespace WpfApp5
     public partial class CarWpf : Page
     {
         Car carTake;
-        FavoriteDb favorite;
+        FavoriteDb favorite1;
+        CarDb car1 = new CarDb();
+       
 
 
         public CarWpf(Car car)
         {
-         InitializeComponent();
+            InitializeComponent();
 
             carTake = car;
 
@@ -45,7 +48,7 @@ namespace WpfApp5
 
         }
 
-        
+
 
         private void BackMain(object sender, RoutedEventArgs e)
         {
@@ -61,11 +64,13 @@ namespace WpfApp5
 
         private void Remamber(object sender, RoutedEventArgs e)
         {
-            Favorite favorite = new Favorite() {car=carTake.ToString() };
+            Favorite favorite = new Favorite() { car = carTake };
             FavoriteDb fyd = new FavoriteDb();
             fyd.Insert(favorite);
-            NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new FavoritePage(carTake));
+            fyd.SaveChanges();
+            clear.Visibility = Visibility.Visible;
+            
+            
         }
     }
 }

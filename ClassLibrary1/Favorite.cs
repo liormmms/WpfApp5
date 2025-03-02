@@ -10,7 +10,7 @@ namespace Model
     {
        
 
-        public string car { get; set; }
+        public Car car { get; set; }
         
     }
 }

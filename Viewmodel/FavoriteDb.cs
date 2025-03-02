@@ -15,8 +15,9 @@ namespace ViewModel
         protected override Base CreateModel(Base entity)
         {
             Favorite m = entity as Favorite;
-            m.car = reader["car"].ToString();
+            m.car =CarDb.SelectById(int.Parse(reader["car"].ToString()));
             return base.CreateModel(entity);
+            //usr.Location = CityDb.SelectById(int.Parse(reader["Location"].ToString()));
         }
 
         public Fvoritelist SelectAll1()
@@ -55,7 +56,7 @@ namespace ViewModel
             {
                 string sql = $"Insert into Favorite (car) values (@car)";
                 command.CommandText = sql;
-                command.Parameters.Add(new OleDbParameter("@car", f.car));
+                command.Parameters.Add(new OleDbParameter("@car", f.car.Id));
             }
 
 
@@ -72,7 +73,7 @@ namespace ViewModel
                              $" WHERE id=@Id";
                 command.CommandText = sql;
 
-                command.Parameters.Add(new OleDbParameter("@car", favorite.car));
+                command.Parameters.Add(new OleDbParameter("@car", favorite.car.Id));
 
                 command.Parameters.Add(new OleDbParameter("@Id", favorite.Id));
 
@@ -81,6 +82,11 @@ namespace ViewModel
 
 
             }
+        }
+
+        protected override Base NewEntity()
+        {
+            return new Model.Favorite();
         }
     }
 }

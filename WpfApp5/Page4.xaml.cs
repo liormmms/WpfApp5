@@ -29,7 +29,9 @@ namespace WpfApp5
         CarDb car1 = new CarDb();
         KindDb kind1 = new KindDb();
         CityDb city2 = new CityDb();
+        FavoriteDb favorite2 = new();
         List<Car> ListcarSave = new List<Car>();
+        
        
         
 
@@ -46,6 +48,9 @@ namespace WpfApp5
 
 
         }
+
+        
+
         public List<Car> Returncar()
         {
             return ListcarSave;
@@ -119,8 +124,6 @@ namespace WpfApp5
                     Listcar.ItemsSource = CIList;
                     ListcarSave = CIList;
                 }
-            
-
         }
 
 
@@ -133,6 +136,13 @@ namespace WpfApp5
             NavigationService nv = NavigationService.GetNavigationService(this);
             nv.Navigate(new CarWpf(selectedRow));
            
+        }
+
+        private void FavoriteSelect(object sender, RoutedEventArgs e)
+        {
+            Listcar.ItemsSource = favorite2.SelectAll1().Select(x => x.car);
+
+
         }
     }
 }

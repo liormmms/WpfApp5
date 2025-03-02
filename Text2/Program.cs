@@ -25,8 +25,8 @@ foreach (Kind c in kcs)
     Console.WriteLine(c.kind);
 Kind ky = new Kind() { kind = "luxury" };
 KindDb kyd = new KindDb();
-//kyd.Insert(ky);
-//kyd.SaveChanges();
+kyd.Insert(ky);
+kyd.SaveChanges();
 Kindlist kinds = kyd.SelectAll();
 foreach (Kind c in kinds)
 {
@@ -226,7 +226,7 @@ foreach (Favorite c in favorits)
     Console.WriteLine(c.car);
 }
 Favorite fu2 = favorits[2];
-fu2.car = "3";
+fu2.car = cu2;
 fyd.Update(fu2);
 fyd.SaveChanges();
 Fvoritelist favorites = fyd.SelectAll1();
