@@ -6,48 +6,109 @@
       xmlns:local="clr-namespace:WpfApp5"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BuyPage">
+      Title="BuyPage"
+      Background="Orange">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="20">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.35*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="0.45*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="75*"/>
 
         </Grid.RowDefinitions>
-        
-        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="modelbuy" TextElement.FontSize="20"/>
-        
-        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="pricebuy" TextElement.FontSize="20" />
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="first name" />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,21,0,40" x:Name="fnametext"/>
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  Text="last name"  />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,81,0,40" x:Name="lnametext" />
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Text="adress" Margin="0,81,0,21"  />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom"  x:Name="adresstext"  />
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="right" VerticalAlignment="Top"  Text="credit card" />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,21,0,40" x:Name="creditext" />
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center"  Text="gmail" />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,81,0,40" x:Name="gmailtext" />
-        
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Text="civ" Margin="0,81,0,21" />
-        
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="civtext"/>
-        
-        <Button Grid.Row="2" Width="150"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle"/>
-        
-        <TextBlock Grid.Row="2" Width="150" Height="50" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Collapsed" x:Name="Finalmassge"/>
 
-        <Button Grid.Row="2" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Return"/>
+        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="modelbuy" TextElement.FontSize="20"/>
+
+        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="pricebuy" TextElement.FontSize="20" />
+
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="first name" Margin="80,0,0,0" />
+
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0" x:Name="fnametext"/>
+
+        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="last name" Margin="80,0,0,0"  />
+
+        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0" x:Name="lnametext" />
+
+        <TextBlock Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="adress" Margin="80,0,0,0"  />
+
+        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="adresstext" Margin="80,0,0,0"  />
+
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"  Text="credit card" Margin="0,0,80,0" />
+
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="570,0,0,0" x:Name="creditext" />
+
+        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="gmail" Margin="570,0,0,0" />
+
+        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,80,0" x:Name="gmailtext" />
+
+        <TextBlock Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="civ" Margin="570,0,0,0" />
+
+        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="civtext" Margin="0,0,80,0"/>
+
+        <Button Style="{DynamicResource ButtonStyle1}" Grid.Row="4"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle" Margin="325,0,325,0" TextElement.FontWeight="Black" Background="LightGreen"/>
+
+        <TextBlock Grid.Row="4" Height="50" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Collapsed" x:Name="Finalmassge" Margin="325,14,325,0" Background="Orange" TextElement.FontWeight="Black" />
+
+        <Button Grid.Row="4" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Return"/>
     </Grid>
 </Page>

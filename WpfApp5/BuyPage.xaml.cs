@@ -69,12 +69,12 @@ namespace WpfApp5
             {
                 //carb.Delete(carbuy);
                 Finalmassge.Visibility = Visibility.Visible;
-                civtext.BorderBrush = new SolidColorBrush(Colors.Green);
-                gmailtext.BorderBrush = new SolidColorBrush(Colors.Green);
-                creditext.BorderBrush = new SolidColorBrush(Colors.Green);
-                adresstext.BorderBrush = new SolidColorBrush(Colors.Green);
-                lnametext.BorderBrush = new SolidColorBrush(Colors.Green);
-                fnametext.BorderBrush = new SolidColorBrush(Colors.Green);
+                civtext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                gmailtext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                creditext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                adresstext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                lnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                fnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
             }
         }
 

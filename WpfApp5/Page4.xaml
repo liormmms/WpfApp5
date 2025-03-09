@@ -108,7 +108,7 @@
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Fill" TargetName="arrow" Value="{StaticResource ComboBox.MouseOver.Glyph}"/>
                             </Trigger>
-                            <MultiDataTrigger>
+                            <MultiDataTrigger> 
                                 <MultiDataTrigger.Conditions>
                                     <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=Self}}" Value="true"/>
                                     <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
@@ -750,6 +750,8 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter  Property="Margin" Value="0,20,0,20"/>
+                            <Setter Property="Background" Value="AntiqueWhite" />
+                         
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
