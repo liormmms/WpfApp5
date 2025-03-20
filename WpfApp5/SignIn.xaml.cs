@@ -31,12 +31,20 @@ namespace WpfApp5
         
         private void page3go(object sender, RoutedEventArgs e)
         {
-            
-           
+
+            bool Isseller=false;
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);
             Userinfo userinfo1 = new() { UserName = n, UserPass = x };
             bool m = false;
+            foreach(Userinfo u in Page1.List5S)
+            {
+                if (userinfo1.UserPass == u.UserPass && userinfo1.UserName == u.UserName)
+                {
+                    m = true;
+                    Isseller = true;
+                }
+            }
             foreach (Userinfo u in Page1.List5)
             {
                 if (userinfo1.UserPass == u.UserPass&& userinfo1.UserName==u.UserName)
@@ -47,7 +55,7 @@ namespace WpfApp5
             if (m == true)
             {
                 NavigationService nv = NavigationService.GetNavigationService(this);
-                nv.Navigate(new Page4());
+                nv.Navigate(new Page4(Isseller,n));
             }
         }
 

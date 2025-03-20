@@ -25,7 +25,9 @@ namespace WpfApp5
         Car carbuy;
         CarDb carb;
         bool Iscomplete=true;
-        public BuyPage( Car carbuy)
+        bool IsSeller;
+        string n;
+        public BuyPage( Car carbuy, bool IsSeller, string n)
         {
             InitializeComponent();
             modelbuy.Text = carbuy.Modelname.Moedlname;
@@ -81,7 +83,7 @@ namespace WpfApp5
         private void Return(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4());
+            nv.Navigate(new Page4(IsSeller,n));
         }
     }
 }

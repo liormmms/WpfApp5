@@ -27,10 +27,13 @@ namespace WpfApp5
         Car carTake;
         FavoriteDb favorite1;
         CarDb car1 = new CarDb();
-       
+        bool IsSeller;
+        string n;
 
 
-        public CarWpf(Car car)
+
+
+        public CarWpf(Car car, string n)
         {
             InitializeComponent();
 
@@ -53,13 +56,13 @@ namespace WpfApp5
         private void BackMain(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4());
+            nv.Navigate(new Page4(IsSeller,n));
         }
 
         private void GoBuy(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new BuyPage(carTake));
+            nv.Navigate(new BuyPage(carTake,IsSeller,n));
         }
 
         private void Remamber(object sender, RoutedEventArgs e)

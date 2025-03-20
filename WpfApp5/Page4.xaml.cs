@@ -31,12 +31,14 @@ namespace WpfApp5
         CityDb city2 = new CityDb();
         FavoriteDb favorite2 = new();
         List<Car> ListcarSave = new List<Car>();
+        bool IsSeller;
+        string n;
         
        
         
 
 
-        public Page4()
+        public Page4(bool IsSeller, string n)
         {
             InitializeComponent();
 
@@ -45,6 +47,10 @@ namespace WpfApp5
             citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname);
             ListcarSave = car1.SelectAll();
             DataContext = this;
+            if (IsSeller == true)
+            {
+                SellC.Visibility = Visibility.Visible;
+            }
 
 
         }
@@ -134,7 +140,7 @@ namespace WpfApp5
             int place = Listcar.SelectedIndex;
             Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow));
+            nv.Navigate(new CarWpf(selectedRow,n));
            
         }
 
@@ -142,6 +148,11 @@ namespace WpfApp5
         {
             Listcar.ItemsSource = favorite2.SelectAll1().Select(x => x.car);
 
+
+        }
+
+        private void SellCar(object sender, RoutedEventArgs e)
+        {
 
         }
     }

@@ -22,7 +22,9 @@ namespace WpfApp5
     public partial class Page1 : Page
     {
         public static List<Userinfo> List5 = new();
-        public Page1()
+        public static List<Userinfo> List5S = new();
+        bool Iseller;
+        public Page1(bool Iseller)
         {
             InitializeComponent();
         }
@@ -31,13 +33,26 @@ namespace WpfApp5
 
        public void send2(object sender, RoutedEventArgs e)
         {
+            Iseller = false;
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);
             Userinfo userinfo = new() { UserName = n, UserPass = x };
             List5.Add(userinfo);
-            Massege.Visibility = Visibility.Visible;
             NavigationService nv = NavigationService.GetNavigationService(this);
             nv.Navigate(new mainPage());
+        }
+
+        private void GoSeller(object sender, RoutedEventArgs e)
+        {
+            Iseller = true;
+            string n = this.b.Text;
+            int x = int.Parse(this.v.Text);
+            Userinfo userinfo = new() { UserName = n, UserPass = x };
+            List5S.Add(userinfo);
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new mainPage());
+            
+           
         }
     }
 

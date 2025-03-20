@@ -139,7 +139,8 @@
         <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
         <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource 
+                FocusVisual2}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background2}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -187,9 +188,9 @@
 " />
         <StackPanel Orientation="Vertical" Grid.Row="1">
             <TextBlock Text="sign in if you dont have an account" Background="White" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Grid.Row="1"/>
-            <Button Style="{DynamicResource ButtonStyle3}"  Content="sign in" Background="Blue" Width="300" Height="40" Click="enter" Grid.Row="1"/>
+            <Button Style="{DynamicResource ButtonStyle3}"  Content="register" Background="Blue" Width="300" Height="40" Click="enter" Grid.Row="1"/>
             <TextBlock Text="sign in if you dont have an account" Background="White" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Margin="50,25,50,0" Grid.Row="1"/>
-            <Button Style="{DynamicResource ButtonStyle2}"  Content="register" Background="Blue" Width="300" Height="40" Click="register" Grid.Row="1"/>           
+            <Button Style="{DynamicResource ButtonStyle2}"  Content="sign in" Background="Blue" Width="300" Height="40" Click="register" Grid.Row="1"/>           
             <TextBlock Background="White" Width="200" Height="15" HorizontalAlignment="Center">
   <Hyperlink Click="skip">
           skip

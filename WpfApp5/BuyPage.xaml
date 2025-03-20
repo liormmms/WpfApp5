@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BuyPage"
-      Background="Orange">
+      Background="Gray">
     <Page.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -74,40 +74,46 @@
             <RowDefinition Height="64*"/>
             <RowDefinition Height="64*"/>
             <RowDefinition Height="75*"/>
-
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="modelbuy" TextElement.FontSize="20"/>
+        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="modelbuy" TextElement.FontSize="20" Grid.ColumnSpan="2" Margin="0,0,0,84" Grid.RowSpan="2" Grid.Column="1" TextElement.FontWeight="Heavy"/>
 
-        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="pricebuy" TextElement.FontSize="20" />
+        <TextBlock  Grid.Row="0" Width="150" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="pricebuy" TextElement.FontSize="20" Margin="0,0,0,84" Grid.RowSpan="2" Grid.Column="3" TextElement.FontWeight="Heavy" />
 
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="first name" Margin="80,0,0,0" />
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"  Text="first name" Grid.Column="1"/>
 
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0" x:Name="fnametext"/>
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="fnametext"  Grid.Column="1"/>
 
-        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="last name" Margin="80,0,0,0"  />
+        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"  Text="last name"  Grid.Column="1"  />
 
-        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0" x:Name="lnametext" />
+        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="lnametext"  Grid.Column="1" />
 
-        <TextBlock Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="adress" Margin="80,0,0,0"  />
+        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"  Text="adress" Margin="0,84,0,0"  Grid.RowSpan="2" Grid.Column="1" />
 
-        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center"  x:Name="adresstext" Margin="80,0,0,0"  />
+        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"  x:Name="adresstext"  Grid.Column="1"   />
 
-        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"  Text="credit card" Margin="0,0,80,0" />
+        <TextBlock Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top"  Text="credit card"  Grid.Column="3" />
 
-        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="570,0,0,0" x:Name="creditext" />
+        <TextBox Grid.Row="1" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="creditext"  Grid.Column="3" />
 
-        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="gmail" Margin="570,0,0,0" />
+        <TextBlock Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="gmail"    Grid.Column="3" />
 
-        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,80,0" x:Name="gmailtext" />
+        <TextBox Grid.Row="2" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="gmailtext" Grid.Column="3" />
 
-        <TextBlock Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="civ" Margin="570,0,0,0" />
+        <TextBlock Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Text="civ"  Grid.Column="3"  />
 
-        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="civtext" Margin="0,0,80,0"/>
+        <TextBox Grid.Row="3" Width="150" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="civtext" Margin="0,0,0,0" Grid.Column="3"/>
 
-        <Button Style="{DynamicResource ButtonStyle1}" Grid.Row="4"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle" Margin="325,0,325,0" TextElement.FontWeight="Black" Background="LightGreen"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Grid.Row="4"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle"  TextElement.FontWeight="Black" Background="LawnGreen" Grid.Column="2" />
 
-        <TextBlock Grid.Row="4" Height="50" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Collapsed" x:Name="Finalmassge" Margin="325,14,325,0" Background="Orange" TextElement.FontWeight="Black" />
+        <TextBlock Grid.Row="4" Height="50" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Collapsed" x:Name="Finalmassge" Margin="5,0,155,0" Background="MidnightBlue" TextElement.FontWeight="Black" Grid.Column="2" />
 
         <Button Grid.Row="4" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Return"/>
     </Grid>

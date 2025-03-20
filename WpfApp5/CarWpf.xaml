@@ -140,6 +140,7 @@
         <TextBlock Grid.Row="1" Width="130" HorizontalAlignment="Left" Height="35" Margin="230,0,0,0" Text="added" TextElement.FontSize="20" TextElement.Foreground="Gray" TextAlignment="Center" Visibility="Hidden" x:Name="clear" />
         <TextBlock  x:Name="ModelText" Grid.Row="1" Width="150" HorizontalAlignment="Right" Height="35" Background="LightGray" TextElement.FontWeight="Bold" TextElement.FontSize="25"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="3,20,0,189" Grid.RowSpan="2">
+            
             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right">
                 <TextBlock Text="seller" Width="113" Height="30" TextElement.FontSize="25" TextElement.Foreground="Black" TextElement.FontWeight="DemiBold" TextAlignment="Center"/>
                 <TextBlock Width="100" Height="30" TextElement.FontStyle="Italic"  x:Name="sellerText"/>

@@ -16,6 +16,7 @@ namespace WpfApp5
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isseller;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace WpfApp5
         private void enter(object sender, RoutedEventArgs e)
         {
             NavigationService nv =  NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page1());
+            nv.Navigate(new Page1(isseller));
         }
 
         private void register(object sender, RoutedEventArgs e)

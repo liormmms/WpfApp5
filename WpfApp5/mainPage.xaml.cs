@@ -20,6 +20,8 @@ namespace WpfApp5
     /// </summary>
     public partial class mainPage : Page
     {
+        bool IsSELLER;
+        string n;
         public mainPage()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace WpfApp5
         private void enter(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page1());
+            nv.Navigate(new Page1(IsSELLER));
         }
 
         private void register(object sender, RoutedEventArgs e)
@@ -40,7 +42,7 @@ namespace WpfApp5
         private void skip(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4());
+            nv.Navigate(new Page4(IsSELLER,n));
         }
     }
 }
