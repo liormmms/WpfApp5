@@ -155,5 +155,14 @@ namespace WpfApp5
         {
 
         }
+
+        private void LastNameCM_Click(object sender, RoutedEventArgs e)
+        {
+           
+            int place = Listcar.SelectedIndex;
+            Car selectedRow = ListcarSave[place];
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new CarWpf(selectedRow, n));
+        }
     }
 }

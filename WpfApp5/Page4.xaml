@@ -108,7 +108,7 @@
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Fill" TargetName="arrow" Value="{StaticResource ComboBox.MouseOver.Glyph}"/>
                             </Trigger>
-                            <MultiDataTrigger> 
+                            <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
                                     <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=Self}}" Value="true"/>
                                     <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="false"/>
@@ -730,7 +730,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            
+
             <ComboBox Style="{DynamicResource ComboBoxStyle1}"   Text="pick city" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="citybutton" SelectionChanged="ClickCity">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -759,28 +759,35 @@
 
 
         </DataGrid>-->
-        <ListView Grid.ColumnSpan="4" x:Name="Listcar" Grid.Row="1" HorizontalAlignment="Center"  >
+        <ListView Grid.ColumnSpan="4" x:Name="Listcar" HorizontalAlignment="Center" MouseDoubleClick="LastNameCM_Click" Margin="0,64,0,0" Grid.RowSpan="2" Width="590" >
 
             <ListView.View>
 
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Car Information">
 
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Modelname.Moedlname}" Header="Model" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Modelname.Moedlname}" Width="100"/>
 
-                    <!--<GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Width="100">
-                        --><!--<GridViewColumnHeader>Last Name
-                            --><!--<GridViewColumnHeader.ContextMenu>
+        
+                        <!--<GridViewColumnHeader>
+                            <GridViewColumnHeader.ContextMenu>
                                 <ContextMenu MenuItem.Click="LastNameCM_Click" Name="LastNameCM">
                                     <MenuItem Header="Ascending" />
                                     <MenuItem Header="Descending" />
-                                </ContextMenu>--><!--
-                            </GridViewColumnHeader.ContextMenu>--><!--
+                                    
+                                        
+                                    
+                                </ContextMenu>
+                            </GridViewColumnHeader.ContextMenu>
                         </GridViewColumnHeader>-->
-                    <!--</GridViewColumn>-->
+                    
 
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarBrand.Bname}" Header="Brand" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarSeller.phone}" Header="Phone" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Price" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarBrand.Bname}"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarSeller.phone}" Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Location.cityname}"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Carkind.kind}"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=km}"  Width="85.7"/>
+
                 </GridView>
 
             </ListView.View>
