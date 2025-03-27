@@ -31,6 +31,8 @@ namespace WpfApp5
         CityDb city2 = new CityDb();
         FavoriteDb favorite2 = new();
         List<Car> ListcarSave = new List<Car>();
+        List<Kind> ListkindSave = new List<Kind>();
+        List<City1> ListcitySave = new List<City1>();
         bool IsSeller;
         string n;
         
@@ -42,10 +44,16 @@ namespace WpfApp5
         {
             InitializeComponent();
 
-            Listcar.ItemsSource = car1.SelectAll().Select(x => x);
-            kindbutton.ItemsSource = kind1.SelectAll().Select(x=>x.kind);
-            citybutton.ItemsSource = city2.SelectAll().Select(x=>x.cityname);
+            Listcar.ItemsSource = null;
+            kindbutton.ItemsSource = null;
+            citybutton.ItemsSource = null;
             ListcarSave = car1.SelectAll();
+            ListkindSave = kind1.SelectAll();
+            ListcitySave = city2.SelectAll();
+            Listcar.Items.Clear();
+            kindbutton.ItemsSource = ListkindSave;
+            citybutton.ItemsSource = ListcitySave;
+            Listcar.ItemsSource = ListcarSave;
             DataContext = this;
             if (IsSeller == true)
             {
