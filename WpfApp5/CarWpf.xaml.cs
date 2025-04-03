@@ -40,12 +40,12 @@ namespace WpfApp5
             carTake = car;
 
             ModelText.Text = carTake.Modelname.Moedlname;
-            priceText.Text = carTake.Price.ToString();
-            kmText.Text = carTake.km.ToString();
-            sellerText.Text = carTake.CarSeller.fname;
-            brandText.Text = carTake.CarBrand.Bname;
-            kindText.Text = carTake.Carkind.kind;
-            cityText.Text = carTake.Location.cityname;
+            priceText.Text = "price: "+carTake.Price.ToString();
+            kmText.Text = "km: " + carTake.km.ToString();
+            sellerText.Text = "seller: " + carTake.CarSeller.fname;
+            brandText.Text = "brand: " + carTake.CarBrand.Bname;
+            kindText.Text = "kind: " + carTake.Carkind.kind;
+            cityText.Text = "city: " + carTake.Location.cityname;
             BitmapImage carimage = new BitmapImage(new Uri(carTake.pic));
             imagecar.Source = carimage;
 

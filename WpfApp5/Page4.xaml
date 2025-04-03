@@ -1282,14 +1282,17 @@
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
 
 
-
-            <ComboBox Style="{DynamicResource ComboBoxStyle3}"   Text="pick kind" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="kindbutton" SelectionChanged="ClickKind">
+            <GroupBox
+                Header="pick kind">
+                <ComboBox Style="{DynamicResource ComboBoxStyle3}"   Text="pick kind" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="kindbutton" SelectionChanged="ClickKind">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding StringFormat='.{0:p1}'}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
+
             </ComboBox>
+           </GroupBox>
 
             <ComboBox Style="{DynamicResource ComboBoxStyle4}"   Text="pick city" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="citybutton" SelectionChanged="ClickCity">
                 <ComboBox.ItemTemplate>

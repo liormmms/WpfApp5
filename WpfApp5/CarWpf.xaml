@@ -138,34 +138,21 @@
         <Button Style="{DynamicResource ButtonStyle2}" Grid.Row="1" Width="100" HorizontalAlignment="Left" Height="35" Content="buy" Background="OrangeRed" TextElement.FontWeight="Bold" Click="GoBuy" VerticalAlignment="Center"/>
         <Button Style="{DynamicResource ButtonStyle1}" Grid.Row="1" Width="110" HorizontalAlignment="Left" Height="35" Content="remamber the car" Background="Blue" TextElement.FontWeight="Bold" Margin="110,0,0,0" Click="Remamber" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="1" Width="130" HorizontalAlignment="Left" Height="35" Margin="230,0,0,0" Text="added" TextElement.FontSize="20" TextElement.Foreground="Gray" TextAlignment="Center" Visibility="Hidden" x:Name="clear" />
-        <TextBlock  x:Name="ModelText" Grid.Row="1" Width="150" HorizontalAlignment="Right" Height="35" Background="LightGray" TextElement.FontWeight="Bold" TextElement.FontSize="25"/>
+        <TextBlock  x:Name="ModelText" Grid.Row="1" Width="150" HorizontalAlignment="Right" Height="35" Background="LightGray" TextElement.FontWeight="Bold" TextElement.FontSize="25" TextAlignment="Right" Margin="0,0,15,0"/>
         <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Left" Grid.ColumnSpan="3"  Grid.RowSpan="2">
 
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic" TextElement.Foreground="Black"  TextAlignment="Center" x:Name="sellerText" TextElement.FontSize="20"/>
 
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic"  x:Name="brandText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0" TextElement.FontSize="20"/>
 
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic" TextElement.Foreground="Black"  TextAlignment="Center" x:Name="sellerText"/>
-           
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic"  x:Name="kindText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0" TextElement.FontSize="20"/>
+
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic" x:Name="cityText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0" TextElement.FontSize="20"/>
+
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic" x:Name="kmText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0" TextElement.FontSize="20"/>
+
+            <TextBlock Width="150" Height="30" TextElement.FontStyle="Italic"  x:Name="priceText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0" TextElement.FontSize="20" />
             
-                
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic"  x:Name="brandText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0"/>
-
-
-
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic"  x:Name="kindText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0"/>
-
-
-
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic" x:Name="cityText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0"/>
-
-
-
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic" x:Name="kmText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0"/>
-
-
-
-            <TextBlock Width="100" Height="20" TextElement.FontStyle="Italic"  x:Name="priceText" TextElement.Foreground="Black"  TextAlignment="Center" Margin="0,5,0,0"/>
-            
-
         </StackPanel>
 
 

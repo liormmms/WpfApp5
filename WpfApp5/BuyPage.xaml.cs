@@ -77,13 +77,14 @@ namespace WpfApp5
                 adresstext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 lnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 fnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
+                carb.Delete(carbuy);
             }
         }
 
         private void Return(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4(IsSeller,n));
+            nv.Navigate(new CarWpf(carbuy,n));
         }
     }
 }
