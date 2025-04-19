@@ -172,5 +172,10 @@ namespace WpfApp5
             NavigationService nv = NavigationService.GetNavigationService(this);
             nv.Navigate(new CarWpf(selectedRow, n));
         }
+
+        private void CarSelect(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

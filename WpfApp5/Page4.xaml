@@ -1294,35 +1294,53 @@
             </ComboBox>
            </GroupBox>
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle4}"   Text="pick city" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="citybutton" SelectionChanged="ClickCity">
+            <GroupBox Header="pick city">
+                <ComboBox Style="{DynamicResource ComboBoxStyle4}"   Text="pick city" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="citybutton" SelectionChanged="ClickCity">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <Button Content="{Binding StringFormat='.{0:p1}'}" Click="CarSelect"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <ComboBox   Text="pick price range" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="pricebutton" SelectionChanged="ClickPrice">
+            </GroupBox>
+            <GroupBox Header="pick price range">
+                <ComboBox   Text="pick price range" IsReadOnly="True" Background="AntiqueWhite" BorderThickness="2" Width="266.6666667"  x:Name="pricebutton" SelectionChanged="ClickPrice">
                 <ComboBoxItem Content="20,000" />
                 <ComboBoxItem Content="50,000"/>
                 <ComboBoxItem Content="50,000>" />
             </ComboBox>
+            </GroupBox>
         </StackPanel>
-        <!--<DataGrid x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelect" ItemsSource="{Binding ListcarSave}">
+        <DataGrid x:Name="Listcar" Width="400" Background="AntiqueWhite" AutoGenerateColumns="True" Grid.ColumnSpan="4" Margin="200,64,200,0" Grid.RowSpan="4" BorderThickness="0" SelectionChanged="CarSelect" ItemsSource="{Binding ListcarSave}">
             <DataGrid.Columns>
                 <DataGridTextColumn>
                     
-                    <DataGridTextColumn.ElementStyle>
+                    <!--<DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter  Property="Margin" Value="0,20,0,20"/>
                             <Setter Property="Background" Value="AntiqueWhite" />
+                            <Setter 
                         </Style>
-                    </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn.ElementStyle>-->
+                   
                 </DataGridTextColumn>
             </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="BorderBrush" Value="AntiqueWhite"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding pic}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
 
 
-        </DataGrid>-->
-        <ListView Grid.ColumnSpan="4" x:Name="Listcar" HorizontalAlignment="Center" MouseDoubleClick="LastNameCM_Click" Margin="0,64,0,0" Grid.RowSpan="2" Width="590" Background="AntiqueWhite" >
+        </DataGrid>
+        <!--<ListView Grid.ColumnSpan="4" x:Name="Listcar" HorizontalAlignment="Center" MouseDoubleClick="LastNameCM_Click" Margin="0,64,0,0" Grid.RowSpan="2" Width="590" Background="AntiqueWhite" >
 
             <ListView.View>
                 
@@ -1337,17 +1355,6 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Carkind.kind}"  Width="85.7"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=km}"  Width="85.7"/>
 
-                    <!--<GridViewColumnHeader>
-     <GridViewColumnHeader.ContextMenu>
-         <ContextMenu MenuItem.Click="LastNameCM_Click" Name="LastNameCM">
-             <MenuItem Header="Ascending" />
-             <MenuItem Header="Descending" />
-             
-                 
-             
-         </ContextMenu>
-     </GridViewColumnHeader.ContextMenu>
- </GridViewColumnHeader>-->
                     
                     
 
@@ -1358,7 +1365,7 @@
             
 
             
-        </ListView>
+        </ListView>-->
 
         <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="1" Height="40" Content="favorites" Click="FavoriteSelect"/>
         <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="1" Height="40" Content="on sell" Margin="0,50" Visibility="Hidden" Click="SellCar" x:Name="SellC"/>
