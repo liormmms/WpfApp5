@@ -84,7 +84,7 @@ namespace WpfApp5
             CarDb carS = new CarDb();
             List<Seller> ListSeller = new List<Seller>();
             ListSeller=s.SelectAll();
-            Seller sellerS = ListSeller.FirstOrDefault(se => se.email ==emialenter.Text);
+            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass ==emialenter.Text);
             string pic = DropZone_Drop( sender, e1);
             Brand bS = (Brand)brandP.SelectedItem;
             City1 cS = (City1)cityP.SelectedItem;

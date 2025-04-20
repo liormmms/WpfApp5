@@ -53,7 +53,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-            <TextBlock Text="type the email" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Text="type the password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <TextBox x:Name="emialenter" Width="200"/>
 
             <TextBlock Text="drag the picure" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
