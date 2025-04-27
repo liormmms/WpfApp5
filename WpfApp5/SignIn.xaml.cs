@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace WpfApp5
     public partial class Page2 : Page
         
     {
+        Seller seller, seller1;
         
         public Page2()
         {
@@ -37,20 +39,22 @@ namespace WpfApp5
             int x = int.Parse(this.v.Text);
             Userinfo userinfo1 = new() { UserName = n, UserPass = x };
             bool m = false;
-            foreach(Userinfo u in Page1.List5S)
+            seller = Page1.List5S.FirstOrDefault(seller1 => seller1.sellerpass == n);
+            if (seller != null)
             {
-                if (userinfo1.UserPass == u.UserPass && userinfo1.UserName == u.UserName)
-                {
-                    m = true;
-                    Isseller = true;
-                }
+                m = true;
+                Isseller = true;
             }
-            foreach (Userinfo u in Page1.List5)
+            else
             {
-                if (userinfo1.UserPass == u.UserPass&& userinfo1.UserName==u.UserName)
-                    m = true;
-                else
-                    Console.WriteLine("incorrect password or name");
+
+                foreach (Userinfo u in Page1.List5)
+                {
+                    if (userinfo1.UserPass == u.UserPass && userinfo1.UserName == u.UserName)
+                        m = true;
+                    else
+                        Console.WriteLine("incorrect password or name");
+                }
             }
             if (m == true)
             {
