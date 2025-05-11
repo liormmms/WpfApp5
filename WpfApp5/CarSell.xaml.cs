@@ -116,7 +116,20 @@ namespace WpfApp5
            
         }
 
-        
+        private void SellCar(object sender, RoutedEventArgs e)
+        {
+            CarDb carS = new CarDb();
+            List<Seller> ListSeller = new List<Seller>();
+            ListSeller = s.SelectAll();
+            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == emialenter.Text);
+            string pic = _droppedImageUri;
+            Brand bS = (Brand)brandP.SelectedItem;
+            City1 cS = (City1)cityP.SelectedItem;
+            Model1 Ms = (Model1)modelP.SelectedItem;
+            Kind ks = (Kind)kindP.SelectedItem;
+            Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
+            carS.Insert(car1);
+        }
     }
     
 }

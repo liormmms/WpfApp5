@@ -22,19 +22,21 @@ namespace WpfApp5
     /// </summary>
     public partial class BuyPage : Page
     {
-        Car carbuy;
-        CarDb carb;
+        Car carbuy, carB;
+        CarDb carD;
         bool Iscomplete=true;
         bool IsSeller;
         string n;
         public BuyPage( Car carbuy, bool IsSeller, string n)
         {
+            carB = carbuy;
             InitializeComponent();
             modelbuy.Text = carbuy.Modelname.Moedlname;
             pricebuy.Text = carbuy.Price.ToString();
+
         }
 
-        private void Buyfinle(object sender, RoutedEventArgs e)
+        private void Buyfinle(object sender, RoutedEventArgs e )
         {
             Iscomplete = true;
             if (fnametext.Text == "")
@@ -69,7 +71,7 @@ namespace WpfApp5
             }
             if (Iscomplete == true)
             {
-                //carb.Delete(carbuy);
+               
                 Finalmassge.Visibility = Visibility.Visible;
                 civtext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 gmailtext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
@@ -77,14 +79,14 @@ namespace WpfApp5
                 adresstext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 lnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 fnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
-                carb.Delete(carbuy);
+                //carD.Delete(carB);
             }
         }
 
         private void Return(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(carbuy,n));
+            nv.Navigate(new CarWpf(carB,n));
         }
     }
 }

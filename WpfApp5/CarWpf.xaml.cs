@@ -26,7 +26,7 @@ namespace WpfApp5
     {
         Car carTake;
         FavoriteDb favorite1;
-        CarDb car1 = new CarDb();
+        CarDb car1;
         bool IsSeller;
         string n;
 

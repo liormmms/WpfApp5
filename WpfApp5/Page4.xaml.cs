@@ -161,7 +161,8 @@ namespace WpfApp5
 
         private void SellCar(object sender, RoutedEventArgs e)
         {
-
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new CarSell());
         }
 
         private void LastNameCM_Click(object sender, RoutedEventArgs e)
@@ -175,7 +176,18 @@ namespace WpfApp5
 
         private void CarSelect(object sender, SelectionChangedEventArgs e)
         {
+            int place = Listcar.SelectedIndex;
+            Car selectedRow = ListcarSave[place];
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new CarWpf(selectedRow, n));
+        }
 
+        private void LastNameCM_Click(object sender, MouseButtonEventArgs e)
+        {
+            int place = Listcar.SelectedIndex;
+            Car selectedRow = ListcarSave[place];
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new CarWpf(selectedRow, n));
         }
     }
 }
