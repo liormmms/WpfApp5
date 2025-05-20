@@ -44,27 +44,35 @@ namespace WpfApp5
             string n = this.b.Text;
             int x = int.Parse(this.v.Text);
             Userinfo userinfo = new() { UserName = n, UserPass = x };
-            List5.Add(userinfo);
-            NavigationService nv = NavigationService.GetNavigationService(this);
+            if(Iseller != false)
+            {
+                List5.Add(userinfo);
+            }
+            else
+            {
+                string email = this.Se.Text;
+                string phone = this.Sp.Text;
+                City1 cityA = new City1() { cityname = a.Text };
+
+                Seller seller = new Seller() { city = cityA, email = email, phone = phone, fname = b.Text, lname = c.Text, sellerpass = v.Text, tz = int.Parse(d.Text) };
+                List5S.Add(seller);
+
+            }
+                NavigationService nv = NavigationService.GetNavigationService(this);
             nv.Navigate(new mainPage());
+           
         }
 
         private void GoSeller(object sender, RoutedEventArgs e)
         {
             Iseller = true;
-            string n = this.b.Text;
-            int x = int.Parse(this.v.Text);
+          
             Es.Visibility= Visibility.Visible;
             Se.Visibility = Visibility.Visible;
             Ps.Visibility = Visibility.Visible;
             Sp.Visibility = Visibility.Visible;
             spanel.Visibility = Visibility.Visible; 
-            string email = this.Se.Text;
-            string phone = this.Sp.Text;
-            City1 cityA=new City1() {cityname=a.Text };
-         
-            Seller seller = new Seller() {city=cityA, email=email, phone=phone, fname=b.Text, lname=c.Text, sellerpass=v.Text, tz=int.Parse(d.Text)};
-            List5S.Add(seller);
+            
             
             
            

@@ -101,11 +101,13 @@
 
     <Grid>
         <StackPanel>
-            <TextBlock Text="name" Width="500" Height="50" Background="Beige" TextElement.FontSize="40" TextElement.FontStyle="Italic" TextElement.FontWeight="Medium" TextElement.Foreground="Gray"/>
+            
+                <TextBlock Text="name" Width="500" Height="50" Background="Beige" TextElement.FontSize="40" TextElement.FontStyle="Italic" TextElement.FontWeight="Medium" TextElement.Foreground="Gray"/>
             <TextBox Style="{DynamicResource TextBoxStyle1}"  Width="600" Height="30" x:Name="b" Margin="10"/>
             <TextBlock Text="password" Width="500" Height="50" Background="Beige" TextElement.FontSize="40" TextElement.FontStyle="Oblique" TextElement.FontWeight="Medium" TextElement.Foreground="Gray"/>
             <TextBox Style="{DynamicResource TextBoxStyle2}"  Width="600" Height="30" x:Name="v" Margin="10"/>
             <TextBlock>
+               
                 <Hyperlink Click="page3go">
                     go to page
                 </Hyperlink>

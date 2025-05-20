@@ -52,10 +52,11 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-
             <TextBlock Text="type the password" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <TextBox x:Name="emialenter" Width="200"/>
 
+            <local:LoginControl/>
+            
             <TextBlock Text="drag the picure" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <Border x:Name="DropZone"
                 BorderBrush="Black"

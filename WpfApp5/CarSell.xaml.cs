@@ -22,21 +22,33 @@ namespace WpfApp5
     /// </summary>
     public partial class CarSell : Page
     {
-        sellerDb s;
+        sellerDb s=new sellerDb();
         Seller se;
-        BrandDb brand;
-        ModelDB model;
-        CityDb city;
-        KindDb kind;
-         string _droppedImageUri; // 👈 This will store the dropped image's URI
+        BrandDb brand=new BrandDb();
+        ModelDB model=new ModelDB();
+        CityDb city= new CityDb();
+        KindDb kind= new KindDb();
+         string _droppedImageUri;
+        List<Kind> ListkindSave = new List<Kind>();
+        List<City1> ListcitySave = new List<City1>();
+        List<Model1> ListmodelSave = new List<Model1>();
+        List<Brand> ListbrandSave = new List<Brand>();
+
+
 
         public CarSell()
         {
             InitializeComponent();
-            brandP.ItemsSource = brand.SelectAll();
-            modelP.ItemsSource = model.SelectAll();
-            cityP.ItemsSource = city.SelectAll();
-            kindP.ItemsSource = kind.SelectAll();
+
+            ListbrandSave = brand.SelectAll();
+            ListmodelSave = model.SelectAll();
+            ListcitySave = city.SelectAll();
+            ListkindSave = kind.SelectAll();
+            brandP.ItemsSource = ListbrandSave.Select(brand => brand.Bname).ToList();
+            cityP.ItemsSource = ListcitySave.Select(city => city.cityname).ToList();
+            modelP.ItemsSource = ListmodelSave.Select(Model1=> Model1.Moedlname).ToList();
+            kindP.ItemsSource = ListkindSave.Select(Kind => Kind.kind ).ToList();
+
         }
 
         private void DropZone_DragOver(object sender, DragEventArgs e)
