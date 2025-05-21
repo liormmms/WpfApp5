@@ -162,7 +162,7 @@ namespace WpfApp5
         private void SellCar(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarSell());
+            nv.Navigate(new CarSell(IsSeller,n));
         }
 
         private void LastNameCM_Click(object sender, RoutedEventArgs e)

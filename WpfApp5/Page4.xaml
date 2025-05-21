@@ -1343,9 +1343,9 @@
             
         </ListView>
 
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="1" Height="40" Content="favorites" Click="FavoriteSelect"/>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Grid.Row="1" Grid.Column="1" Height="40" Content=" sell" Margin="0,50" Visibility="Hidden" Click="SellCar" x:Name="SellC"/>
-        <Button  HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Grid.Row="1" Grid.Column="1" Height="40" Content="return to original" Click="Return"/>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="90" Grid.Row="1" Grid.Column="1" Height="40" Content="favorites" Click="FavoriteSelect"/>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="90" Grid.Row="1" Grid.Column="1" Height="40" Content=" sell" Margin="0,50" Visibility="Hidden" Click="SellCar" x:Name="SellC"/>
+        <Button  HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="90" Grid.Row="1" Grid.Column="1" Height="40" Content="return to original" Click="Return"/>
     </Grid>
 </Page>
 

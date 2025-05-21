@@ -33,10 +33,11 @@ namespace WpfApp5
         List<City1> ListcitySave = new List<City1>();
         List<Model1> ListmodelSave = new List<Model1>();
         List<Brand> ListbrandSave = new List<Brand>();
+        bool isseller;
+        string n;
 
 
-
-        public CarSell()
+        public CarSell(bool isseller, string n)
         {
             InitializeComponent();
 
@@ -98,7 +99,7 @@ namespace WpfApp5
             CarDb carS = new CarDb();
             List<Seller> ListSeller = new List<Seller>();
             ListSeller = s.SelectAll();
-            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == emialenter.Text);
+            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == usercontrol.passenter.Text);
             string pic = _droppedImageUri;
             Brand bS = (Brand)brandP.SelectedItem;
             City1 cS = (City1)cityP.SelectedItem;
@@ -133,7 +134,7 @@ namespace WpfApp5
             CarDb carS = new CarDb();
             List<Seller> ListSeller = new List<Seller>();
             ListSeller = s.SelectAll();
-            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == emialenter.Text);
+            Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == usercontrol.passenter.Text);
             string pic = _droppedImageUri;
             Brand bS = (Brand)brandP.SelectedItem;
             City1 cS = (City1)cityP.SelectedItem;
@@ -141,6 +142,12 @@ namespace WpfApp5
             Kind ks = (Kind)kindP.SelectedItem;
             Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
             carS.Insert(car1);
+        }
+
+        private void Return(object sender, RoutedEventArgs e)
+        {
+            NavigationService nv = NavigationService.GetNavigationService(this);
+            nv.Navigate(new Page4(isseller, n));
         }
     }
     

@@ -113,7 +113,7 @@
 
         <Button Style="{DynamicResource ButtonStyle1}" Grid.Row="4"  Height="50" VerticalAlignment="Top" Content="buy" TextElement.FontSize="20" Click="Buyfinle"  TextElement.FontWeight="Black" Background="LawnGreen" Grid.Column="2" />
 
-        <TextBlock Grid.Row="4" Height="30" Width="200" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="20" Visibility="Hidden" x:Name="Finalmassge" Margin="5,0,155,0"  TextElement.FontWeight="Black" Grid.Column="2" />
+        <TextBlock Grid.Row="4" Height="30" Width="200" VerticalAlignment="Bottom" Text="bought:)" TextElement.FontSize="10" Visibility="Hidden" x:Name="Finalmassge" Margin="5,0,155,0"  TextElement.FontWeight="Black" Grid.Column="2" />
 
         <Button Grid.Row="4" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Return"/>
     </Grid>

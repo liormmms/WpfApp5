@@ -35,9 +35,9 @@ namespace WpfApp5
         {
 
             bool Isseller=false;
-            string n = this.b.Text;
-            int x = int.Parse(this.v.Text);
-            string pass = this.v.Text;
+            string n = usercontrol.nameenter.Text;
+            int x = int.Parse(usercontrol.passenter.Text);
+            string pass = usercontrol.passenter.Text;
             Userinfo userinfo1 = new() { UserName = n, UserPass = x };
             bool m = false;
             seller = Page1.List5S.FirstOrDefault(seller1 => seller1.sellerpass == pass);
