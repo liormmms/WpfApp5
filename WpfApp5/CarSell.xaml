@@ -57,8 +57,8 @@
 
            
             
-            <TextBlock Text="drag the picure" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0"/>
-            <Border x:Name="DropZone"
+            <TextBlock Text="type the uri of the picture" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+            <!--<Border x:Name="DropZone"
                 BorderBrush="Black"
                 BorderThickness="2"
                 AllowDrop="True"
@@ -70,8 +70,10 @@
                 VerticalAlignment="Center"
                     Margin="0">
                 <Image x:Name="DroppedImage" Stretch="Uniform" />
-            </Border>
-           
+            </Border>-->
+            <TextBox x:Name="picenter" Width="200"/>
+
+
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" >
             

@@ -24,6 +24,10 @@ namespace WpfApp5
     {
         sellerDb s=new sellerDb();
         Seller se;
+        Brand be;
+        City1 ce;
+        Kind ke;
+        Model1 me;
         BrandDb brand=new BrandDb();
         ModelDB model=new ModelDB();
         CityDb city= new CityDb();
@@ -49,50 +53,50 @@ namespace WpfApp5
             cityP.ItemsSource = ListcitySave.Select(city => city.cityname).ToList();
             modelP.ItemsSource = ListmodelSave.Select(Model1=> Model1.Moedlname).ToList();
             kindP.ItemsSource = ListkindSave.Select(Kind => Kind.kind ).ToList();
-
+            isseller = true;
         }
 
-        private void DropZone_DragOver(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                if (files.Length > 0 && IsImageFile(files[0]))
-                {
-                    e.Effects = DragDropEffects.Copy;
-                }
-                else
-                {
-                    e.Effects = DragDropEffects.None;
-                }
-            }
+        //private void DropZone_DragOver(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        //    {
+        //        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        //        if (files.Length > 0 && IsImageFile(files[0]))
+        //        {
+        //            e.Effects = DragDropEffects.Copy;
+        //        }
+        //        else
+        //        {
+        //            e.Effects = DragDropEffects.None;
+        //        }
+        //    }
 
-            e.Handled = true;
-        }
-        private bool IsImageFile(string path)
-        {
-            string extension = System.IO.Path.GetExtension(path).ToLower();
-            return extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".bmp" || extension == ".gif";
-        }
+        //    e.Handled = true;
+        
+        //private bool IsImageFile(string path)
+        //{
+        //    string extension = System.IO.Path.GetExtension(path).ToLower();
+        //    return extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".bmp" || extension == ".gif";
+        //}
 
-        private void DropZone_Drop1(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                if (files.Length > 0 && IsImageFile(files[0]))
-                {
-                    string imagePath = files[0];
-                    _droppedImageUri = new string(imagePath);
-                    Uri imageUri = new Uri(imagePath);
-                    DroppedImage.Source = new BitmapImage(imageUri);
+        //private void DropZone_Drop1(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        //    {
+        //        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        //        if (files.Length > 0 && IsImageFile(files[0]))
+        //        {
+        //            string imagePath = files[0];
+        //            _droppedImageUri = new string(imagePath);
+        //            Uri imageUri = new Uri(imagePath);
+        //            DroppedImage.Source = new BitmapImage(imageUri);
 
                     // You now have the URI here
                    
-                }
-            }
+                
             
-        }
+            
+        
 
         private void SellCar(object sender, DragEventArgs e1)
         {
@@ -100,34 +104,34 @@ namespace WpfApp5
             List<Seller> ListSeller = new List<Seller>();
             ListSeller = s.SelectAll();
             Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == usercontrol.passenter.Text);
-            string pic = _droppedImageUri;
-            Brand bS = (Brand)brandP.SelectedItem;
-            City1 cS = (City1)cityP.SelectedItem;
-            Model1 Ms = (Model1)modelP.SelectedItem;
-            Kind ks = (Kind)kindP.SelectedItem;
+            string pic = picenter.Text;
+            Brand bS = ListbrandSave.FirstOrDefault(be => be.Bname == brandP.SelectedItem);
+            City1 cS = ListcitySave.FirstOrDefault(ce => ce.cityname == cityP.SelectedItem);
+            Model1 Ms = ListmodelSave.FirstOrDefault(me => me.Moedlname == modelP.SelectedItem);
+            Kind ks = ListkindSave.FirstOrDefault(ke => ke.kind == kindP.SelectedItem);
             Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
             carS.Insert(car1);
         }
 
        
 
-        private void DropZone_Drop(object sender, DragEventArgs e)
-        {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                if (files.Length > 0 && IsImageFile(files[0]))
-                {
-                    string imagePath = files[0];
-                    Uri imageUri = new Uri(imagePath);
-                    DroppedImage.Source = new BitmapImage(imageUri);
+        //private void DropZone_Drop(object sender, DragEventArgs e)
+        //{
+        //    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        //    {
+        //        string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+        //        if (files.Length > 0 && IsImageFile(files[0]))
+        //        {
+        //            string imagePath = files[0];
+        //            Uri imageUri = new Uri(imagePath);
+        //            DroppedImage.Source = new BitmapImage(imageUri);
 
-                    // You now have the URI here
+        //            // You now have the URI here
                     
-                }
-            }
+        //        }
+        //    }
            
-        }
+        //}
 
         private void SellCar(object sender, RoutedEventArgs e)
         {
@@ -135,11 +139,11 @@ namespace WpfApp5
             List<Seller> ListSeller = new List<Seller>();
             ListSeller = s.SelectAll();
             Seller sellerS = ListSeller.FirstOrDefault(se => se.sellerpass == usercontrol.passenter.Text);
-            string pic = _droppedImageUri;
-            Brand bS = (Brand)brandP.SelectedItem;
-            City1 cS = (City1)cityP.SelectedItem;
-            Model1 Ms = (Model1)modelP.SelectedItem;
-            Kind ks = (Kind)kindP.SelectedItem;
+            string pic = picenter.Text;
+            Brand bS = ListbrandSave.FirstOrDefault(be => be.Bname == brandP.SelectedItem);
+            City1 cS = ListcitySave.FirstOrDefault(ce => ce.cityname == cityP.SelectedItem);
+            Model1 Ms = ListmodelSave.FirstOrDefault(me => me.Moedlname == modelP.SelectedItem);
+            Kind ks = ListkindSave.FirstOrDefault(ke => ke.kind == kindP.SelectedItem);
             Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
             carS.Insert(car1);
         }
