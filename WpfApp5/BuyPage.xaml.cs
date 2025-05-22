@@ -23,7 +23,7 @@ namespace WpfApp5
     public partial class BuyPage : Page
     {
         Car carbuy, carB;
-        CarDb carD;
+        CarDb carD= new CarDb();
         bool Iscomplete=true;
         bool IsSeller;
         string n;
@@ -79,7 +79,7 @@ namespace WpfApp5
                 adresstext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 lnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
                 fnametext.BorderBrush = new SolidColorBrush(Colors.LawnGreen);
-                //carD.Delete(carB);
+                carD.Delete(carB);
             }
         }
 

@@ -195,7 +195,7 @@ foreach (Car c in cras)
     Console.WriteLine(c.Price);
 }
 Car caLast = cars.Last();
-//cad.Delete(mLast);
+cad.Delete(mLast);
 cad.SaveChanges();
 Console.WriteLine("delete:");
 cars = cad.SelectAll();
