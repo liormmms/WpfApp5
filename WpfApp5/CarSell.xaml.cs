@@ -146,8 +146,8 @@ namespace WpfApp5
             Model1 Ms = ListmodelSave.FirstOrDefault(me => me.Moedlname == modelP.SelectedItem);
             Kind ks = ListkindSave.FirstOrDefault(ke => ke.kind == kindP.SelectedItem);
             Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
-            carS.Insert(car1);
-            carS.SaveChanges();
+            //carS.Insert(car1);
+            //carS.SaveChanges();
         }
 
         private void Return(object sender, RoutedEventArgs e)
