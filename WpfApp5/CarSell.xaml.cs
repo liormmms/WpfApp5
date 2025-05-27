@@ -37,7 +37,7 @@ namespace WpfApp5
         List<City1> ListcitySave = new List<City1>();
         List<Model1> ListmodelSave = new List<Model1>();
         List<Brand> ListbrandSave = new List<Brand>();
-        bool isseller;
+        bool isseller=true;
         string n;
 
 
@@ -146,6 +146,7 @@ namespace WpfApp5
             Kind ks = ListkindSave.FirstOrDefault(ke => ke.kind == kindP.SelectedItem);
             Car car1 = new Car() { pic = pic, CarBrand = bS, Location = cS, Modelname = Ms, Carkind = ks, CarSeller = sellerS, Isfavorite = false, km = int.Parse(kmenter.Text), Price = int.Parse(pricenter.Text) };
             carS.Insert(car1);
+            carS.SaveChanges();
         }
 
         private void Return(object sender, RoutedEventArgs e)

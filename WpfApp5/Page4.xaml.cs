@@ -35,6 +35,7 @@ namespace WpfApp5
         List<City1> ListcitySave = new List<City1>();
         bool IsSeller;
         string n;
+        bool flag;
         
        
         
@@ -55,6 +56,7 @@ namespace WpfApp5
             citybutton.ItemsSource = ListcitySave.Select(City1=>City1.cityname).ToList();
             Listcar.ItemsSource = ListcarSave;
             DataContext = this;
+            flag = IsSeller;
             if (IsSeller == true)
             {
                 SellC.Visibility = Visibility.Visible;
@@ -148,7 +150,7 @@ namespace WpfApp5
             int place = Listcar.SelectedIndex;
             Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow, n));
+            nv.Navigate(new CarWpf(selectedRow, n, IsSeller));
 
         }
 
@@ -171,7 +173,7 @@ namespace WpfApp5
             int place = Listcar.SelectedIndex;
             Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow, n));
+            nv.Navigate(new CarWpf(selectedRow, n, flag));
         }
 
         private void CarSelect(object sender, SelectionChangedEventArgs e)
@@ -179,7 +181,7 @@ namespace WpfApp5
             int place = Listcar.SelectedIndex;
             Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow, n));
+            nv.Navigate(new CarWpf(selectedRow, n, IsSeller));
         }
 
         private void LastNameCM_Click(object sender, MouseButtonEventArgs e)
@@ -187,7 +189,7 @@ namespace WpfApp5
             int place = Listcar.SelectedIndex;
             Car selectedRow = ListcarSave[place];
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(selectedRow, n));
+            nv.Navigate(new CarWpf(selectedRow, n, flag));
         }
 
         private void Return(object sender, RoutedEventArgs e)

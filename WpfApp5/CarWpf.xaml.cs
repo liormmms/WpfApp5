@@ -33,7 +33,7 @@ namespace WpfApp5
 
 
 
-        public CarWpf(Car car, string n)
+        public CarWpf(Car car, string n, bool IsSeller)
         {
             InitializeComponent();
 
