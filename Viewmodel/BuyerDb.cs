@@ -68,7 +68,25 @@ namespace ViewModel
                 command.Parameters.Add(new OleDbParameter("@tz", buyer.tz));
                 command.Parameters.Add(new OleDbParameter("@fname", buyer.fname));
                 command.Parameters.Add(new OleDbParameter("@lname", buyer.lname));
-                command.Parameters.Add(new OleDbParameter("@tz", buyer.city));
+                command.Parameters.Add(new OleDbParameter("@city", buyer.city));
+
+
+
+            }
+
+
+        }
+        protected override void CreateInserdSQL(Base entity, OleDbCommand cmd)
+        {
+            Buyer buyer = entity as Buyer;
+            if (buyer != null)
+            {
+                string sql = $"Insert into buyer (tz,fname,lname,city) values (@tz,@fname,@lname,@city)";
+                command.CommandText = sql;
+                command.Parameters.Add(new OleDbParameter("@tz", buyer.tz));
+                command.Parameters.Add(new OleDbParameter("@fname", buyer.fname));
+                command.Parameters.Add(new OleDbParameter("@lname", buyer.lname));
+                command.Parameters.Add(new OleDbParameter("@city", buyer.city));
 
 
 

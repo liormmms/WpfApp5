@@ -60,8 +60,8 @@ namespace ViewModel
             Base reqEntity = this.NewEntity();
             if (entity != null & entity.GetType() == reqEntity.GetType())
             {
-                inserted.Add(new ChangeEntity(this.CreateInsertSQL, entity));
-                inserted.Add(new ChangeEntity(base.CreateInsertSQL, entity));
+                inserted.Add(new ChangeEntity(this.CreateInserdSQL, entity));
+                inserted.Add(new ChangeEntity(base.CreateInserdSQL, entity));
             }
         }
 
@@ -76,6 +76,25 @@ namespace ViewModel
                 command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
                 command.Parameters.Add(new OleDbParameter("@email", model.email));
                 command.Parameters.Add(new OleDbParameter("@city", model.city.Id));
+                command.Parameters.Add(new OleDbParameter("@phone", model.Id));
+
+
+            }
+
+
+        }
+        protected override void CreateInserdSQL(Base entity, OleDbCommand cmd)
+        {
+            Seller model = entity as Seller;
+            if (model != null)
+            {
+                string sql = $"Insert into seller (phone,sellerpass,email,city) values (@phone,@sellerpass,@email,@city)";
+                command.CommandText = sql;
+                command.Parameters.Add(new OleDbParameter("@phone", model.phone));
+                command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
+                command.Parameters.Add(new OleDbParameter("@email", model.email));
+                command.Parameters.Add(new OleDbParameter("@city", model.city.Id));
+                command.Parameters.Add(new OleDbParameter("@phone", model.Id));
 
 
             }

@@ -21,6 +21,7 @@ namespace ViewModel
         public static List<ChangeEntity> updated = new List<ChangeEntity>();
 
         protected abstract void CreateInsertSQL(Base entity, OleDbCommand cmd);
+        protected abstract void CreateInserdSQL(Base entity, OleDbCommand cmd);
         protected abstract void CreateUpdateSQL(Base entity, OleDbCommand cmd);
 
         // public delegate void CreateSql(BaseDb entity, OleDbCommand command);
@@ -189,54 +190,7 @@ namespace ViewModel
 
         }
 
-        //public async Task<int> SaveChangesAsync()
-        //{
-        //    int records_affected = 0;
-        //    OleDbCommand command = new OleDbCommand();
-        //    try
-        //    {
-        //        command.Connection = this.connection;
-        //        this.connection.Open();
-
-        //        foreach (var item in inserted)
-        //        {
-        //            command.Parameters.Clear();
-        //            item.CreateSql(item.Entity, command);
-        //            records_affected += await command.ExecuteNonQueryAsync();
-
-        //            command.CommandText = "Select @@Identity";
-        //            item.Entity.Id = (int)command.ExecuteScalarAsync().Result;
-        //        }
-
-        //        foreach (var item in updated)
-        //        {
-        //            command.Parameters.Clear();
-        //            item.CreateSql(item.Entity, command);
-        //            records_affected += await command.ExecuteNonQueryAsync();
-        //        }
-
-        //        foreach (var item in deleted)
-        //        {
-        //            command.Parameters.Clear();
-        //            item.CreateSql(item.Entity, command);
-        //            records_affected += await command.ExecuteNonQueryAsync();
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        System.Diagnostics.Debug.WriteLine(e.Message + "\nSQL:" + command.CommandText);
-        //    }
-        //    finally
-        //    {
-        //        inserted.Clear();
-        //        updated.Clear();
-        //        deleted.Clear();
-
-        //        if (connection.State == ConnectionState.Open) connection.Close();
-        //    }
-
-        //    return records_affected;
-        //}
+        
         protected virtual Base CreateModel(Base entity)
         {
             entity.Id = int.Parse("" + reader["id"]);
@@ -248,15 +202,7 @@ namespace ViewModel
      
 
 
-        //public virtual void Delete(BaseDb entity)
-        //{
-        //    Base reqEntity = this.NewEntity();
-        //    if (entity != null & entity.GetType() == reqEntity.GetType())
-        //    {
-        //        deleted.Add(new ChangeEntity(this.CreateDeletedSQL, entity));
-        //    }
-        //}
-
+       
     }
 }
 

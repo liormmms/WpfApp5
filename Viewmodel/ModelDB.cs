@@ -39,6 +39,11 @@ namespace ViewModel
             }
         }
 
+        protected override void CreateInserdSQL(Base entity, OleDbCommand cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void CreateInsertSQL(Base entity, OleDbCommand cmd)
         {
             Model1 model = entity as Model1;

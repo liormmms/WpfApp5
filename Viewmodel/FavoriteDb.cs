@@ -88,5 +88,10 @@ namespace ViewModel
         {
             return new Model.Favorite();
         }
+
+        protected override void CreateInserdSQL(Base entity, OleDbCommand cmd)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

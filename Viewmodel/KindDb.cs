@@ -84,5 +84,10 @@ namespace ViewModel
 
             }
         }
+
+        protected override void CreateInserdSQL(Base entity, OleDbCommand cmd)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
