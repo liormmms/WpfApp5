@@ -23,7 +23,7 @@ namespace WpfApp5
     /// </summary>
     public partial class Page1 : Page
     {
-        sellerDb sellerD;
+        sellerDb sellerD=new sellerDb();
        
         
         
@@ -56,6 +56,8 @@ namespace WpfApp5
 
                 Seller seller = new Seller() { city = cityA, email = email, phone = phone, fname = b.Text, lname = c.Text, sellerpass = v.Text, tz = int.Parse(d.Text) };
                 List5S.Add(seller);
+                sellerD.Insert(seller);
+                sellerD.SaveChanges();
 
             }
                 NavigationService nv = NavigationService.GetNavigationService(this);

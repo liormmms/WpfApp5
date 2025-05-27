@@ -15,6 +15,7 @@ namespace Model
         {
             return phone + " " + sellerpass;
         }
+        public City1 city { get; set; }
 
 
     }

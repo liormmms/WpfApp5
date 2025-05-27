@@ -36,6 +36,7 @@ namespace ViewModel
             usr.phone = reader["phone"].ToString();
             usr.sellerpass = reader["sellerPass"].ToString();
             usr.email = reader["email"].ToString();
+            usr.city = CityDb.SelectById(int.Parse(reader["city"].ToString()));
 
 
             base.CreateModel(entity);
@@ -54,18 +55,27 @@ namespace ViewModel
                 deleted.Add(new ChangeEntity(base.CreateDeletedSQL, entity));
             }
         }
+        public override void Insert(Base entity)
+        {
+            Base reqEntity = this.NewEntity();
+            if (entity != null & entity.GetType() == reqEntity.GetType())
+            {
+                inserted.Add(new ChangeEntity(this.CreateInsertSQL, entity));
+                inserted.Add(new ChangeEntity(base.CreateInsertSQL, entity));
+            }
+        }
 
         protected override void CreateInsertSQL(Base entity, OleDbCommand cmd)
         {
             Seller model = entity as Seller;
             if (model != null)
             {
-                string sql = $"Insert into model(phone,sellerpass,email,city) values (@phone,@sellerpass,@email,@city)";
+                string sql = $"Insert into seller (phone,sellerpass,email,city) values (@phone,@sellerpass,@email,@city)";
                 command.CommandText = sql;
                 command.Parameters.Add(new OleDbParameter("@phone", model.phone));
                 command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
                 command.Parameters.Add(new OleDbParameter("@email", model.email));
-                command.Parameters.Add(new OleDbParameter("@city", model.city));
+                command.Parameters.Add(new OleDbParameter("@city", model.city.Id));
 
 
             }
