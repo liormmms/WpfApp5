@@ -63,7 +63,7 @@ namespace ViewModel
             if (car != null)
             {
                 //string sql = $"Insert into buyer (tz,fname,lname,city) values (@tz,@fname,@lname,@city)";
-                string sql = $"Insert into car (brandName,Carseller,price,location,kind,modelname,km,pic) values (@CarBrand,@Seller,@price,@location,@kind,@modelname,@km,@picture)";
+                string sql = $"Insert into car (brandName,seller,price,location,kind,modelname,km,picture) values (@CarBrand,@Seller,@price,@location,@kind,@modelname,@km,@picture)";
                 command.CommandText = sql;
                 command.Parameters.Add(new OleDbParameter("@CarBrand", car.CarBrand.Id));
                 command.Parameters.Add(new OleDbParameter("@seller", car.CarSeller.Id));

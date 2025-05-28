@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,21 +66,7 @@ namespace ViewModel
             }
         }
 
-        protected override void CreateInsertSQL(Base entity, OleDbCommand cmd)
-        {
-            Seller model = entity as Seller;
-            if (model != null)
-            {
-                string sql = $"Insert into seller (phone,sellerpass,email,city) values (@phone,@sellerpass,@email,@city)";
-                command.CommandText = sql;
-                command.Parameters.Add(new OleDbParameter("@phone", model.phone));
-                command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
-                command.Parameters.Add(new OleDbParameter("@email", model.email));
-                command.Parameters.Add(new OleDbParameter("@city", model.city.Id));
-                command.Parameters.Add(new OleDbParameter("@phone", model.Id));
-
-
-            }
+        
 
 
         }
@@ -101,9 +88,39 @@ namespace ViewModel
 
 
         }
+        protected override void CreateUpdateSQL(Base entity, OleDbCommand cmd)
+        {
+            Seller model = entity as Seller;
+            if (model != null)
+            {
+
+                string sql = $"UPDATE car " +
+                             $"set phone=@phone, sellerpass=@sellerpass, email=@email," +
+                             $" WHERE id=@Id";
+
+
+                command.Parameters.Add(new OleDbParameter("@phone", model.phone));
+                command.Parameters.Add(new OleDbParameter("@sellerpass", model.sellerpass));
+                command.Parameters.Add(new OleDbParameter("@email", model.email));
+                command.Parameters.Add(new OleDbParameter("@city", model.city.Id));
+                command.Parameters.Add(new OleDbParameter("@phone", model.Id));
 
 
 
-    }
+            }
+        }
+        protected override void CreateDeletedSQL(Base entity, OleDbCommand cmd)
+        {
+            Seller k = entity as Seller;
+            if (k != null)
+            {
+                string sql = $"DELETE FROM Car where id=@pid";
+                command.CommandText = sql;
+                command.Parameters.Add(new OleDbParameter("@pid", k.Id));
+            }
+
+
+
+        }
 }
 

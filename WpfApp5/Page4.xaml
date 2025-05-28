@@ -1319,18 +1319,14 @@
 
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Car Information">
 
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Modelname.Moedlname}" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarBrand.Bname}"  Width="85.7"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarSeller.phone}" Width="85.7"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}"  Width="85.7"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Location.cityname}"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Modelname.Moedlname}" Header="model" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarBrand.Bname}" Header="brand"  Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CarSeller.phone}" Header="phone" Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="price" Width="85.7"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Location.cityname}" Header=""  Width="85.7"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Carkind.kind}"  Width="85.7"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=km}"  Width="85.7"/>
-                    <GridViewColumn>
-                        <DataTemplate>
-                            <Image Source="{Binding Path=pic}" Width="85.7"/>
-                        </DataTemplate>
-                    </GridViewColumn>
+                    
                     
                     
 
