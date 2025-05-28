@@ -39,6 +39,6 @@ namespace WpfApp5
             nv.Navigate(new Page2());
         }
 
-        
+       
     }
 }

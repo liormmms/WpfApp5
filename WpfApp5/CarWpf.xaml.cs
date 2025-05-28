@@ -27,7 +27,7 @@ namespace WpfApp5
         Car carTake;
         FavoriteDb favorite1;
         CarDb car1;
-        bool IsSeller;
+        bool IsSeller,flag;
         string n;
 
 
@@ -38,6 +38,7 @@ namespace WpfApp5
             InitializeComponent();
 
             carTake = car;
+            flag = IsSeller;
 
             ModelText.Text = carTake.Modelname.Moedlname;
             priceText.Text = "price: "+carTake.Price.ToString();
@@ -56,13 +57,13 @@ namespace WpfApp5
         private void BackMain(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4(IsSeller,n));
+            nv.Navigate(new Page4(flag,n));
         }
 
         private void GoBuy(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new BuyPage(carTake,IsSeller,n));
+            nv.Navigate(new BuyPage(carTake,flag,n));
         }
 
         private void Remamber(object sender, RoutedEventArgs e)

@@ -24,11 +24,12 @@ namespace WpfApp5
     {
         Car carbuy, carB;
         CarDb carD= new CarDb();
-        bool Iscomplete=true;
-        bool IsSeller;
+        bool Iscomplete;
+        bool IsSeller,flag;
         string n;
         public BuyPage( Car carbuy, bool IsSeller, string n)
         {
+            flag = IsSeller;
             carB = carbuy;
             InitializeComponent();
             modelbuy.Text = carbuy.Modelname.Moedlname;
@@ -87,7 +88,7 @@ namespace WpfApp5
         private void Return(object sender, RoutedEventArgs e)
         {
             NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new CarWpf(carB,n,IsSeller));
+            nv.Navigate(new CarWpf(carB,n,flag));
         }
     }
 }

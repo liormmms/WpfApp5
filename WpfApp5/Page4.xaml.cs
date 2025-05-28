@@ -1,12 +1,10 @@
-﻿using Microsoft.VisualBasic;
-using Model;
+﻿using Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.DirectoryServices;
 using System.Linq;
 using System.Net.Http.Headers;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -38,13 +36,9 @@ namespace WpfApp5
         bool IsSeller;
         string n;
         bool flag;
-        Car car2 = new Car();
         
-        MenuItem menuItem = sender as MenuItem;
-
-
-
-
+       
+        
 
 
         public Page4(bool IsSeller, string n)
@@ -67,7 +61,6 @@ namespace WpfApp5
             {
                 SellC.Visibility = Visibility.Visible;
             }
-
 
 
         }
@@ -205,7 +198,5 @@ namespace WpfApp5
             Listcar.ItemsSource = ListcarSave;
 
         }
-
-        
     }
 }
