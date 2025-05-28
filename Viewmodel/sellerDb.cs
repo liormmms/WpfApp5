@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace ViewModel
 {
-    public class sellerDb:BuyerDb
+    public class sellerDb : BuyerDb
     {
         static private Sellerlist list = new Sellerlist();
-        public static List <ChangeEntity> deleted = new List <ChangeEntity> ();
+        public static List<ChangeEntity> deleted = new List<ChangeEntity>();
 
         public static Model.Seller SelectById(int id)
         {
@@ -29,7 +29,7 @@ namespace ViewModel
             return groupList;
         }
 
-       
+
 
         protected override Base CreateModel(Base entity)
         {
@@ -141,5 +141,6 @@ namespace ViewModel
 
 
         }
+    }
 }
 
