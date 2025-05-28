@@ -39,10 +39,6 @@ namespace WpfApp5
             nv.Navigate(new Page2());
         }
 
-        private void skip(object sender, RoutedEventArgs e)
-        {
-            NavigationService nv = NavigationService.GetNavigationService(this);
-            nv.Navigate(new Page4(IsSELLER,n));
-        }
+        
     }
 }
