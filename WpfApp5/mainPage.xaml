@@ -193,9 +193,7 @@
             <TextBlock Text="sign in if you dont have an account" Background="White" Width="400" Height="40" TextElement.FontStyle="Italic" TextElement.FontSize="20" Margin="50,25,50,0" Grid.Row="1"/>
             <Button Style="{DynamicResource ButtonStyle2}"  Content="sign in" Background="Blue" Width="300" Height="40" Click="register" Grid.Row="1"/>           
             <TextBlock Background="White" Width="200" Height="15" HorizontalAlignment="Center">
-  <Hyperlink Click="skip">
-          skip
-  </Hyperlink>
+  
 
             </TextBlock>
 
